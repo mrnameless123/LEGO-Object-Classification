@@ -1,63 +1,62 @@
 from __future__ import print_function
 from builtins import str
-import os
+import pdb, sys, os, time
 import numpy as np
 import selectivesearch
-from easydict import  EasyDict
-from base_directory.utils import nms as nmsPython
+from easydict import EasyDict
+from fastRCNN.nms import nms as nmsPython
+from PIL import Image, ImageFont, ImageDraw
 from builtins import range
 import cv2, copy, textwrap
-from PIL import Image, ImageFont, ImageDraw
+# from PIL import Image, ImageFont, ImageDraw
 from PIL.ExifTags import TAGS
 
-available_font = 'arial.ttf'
+available_font = "arial.ttf"
 try:
     dummy = ImageFont.truetype(available_font, 16)
-except Exception as Argument:
-    print('Exception occurred while finding font {0}'.format(Argument))
-    available_font = 'FreeMono.ttf'
+except:
+    available_font = "FreeMono.ttf"
 
-#TODO: Region of Interest
-def func_get_selective_search_RoIs(img, ss_scale, ss_sigma, ss_min_size, max_dim):
-    """ 
-    Selective Search
-        Parameters
-        ----------
-            img : ndarray
-                Input image
-            ss_scale : int
-                Free parameter. Higher means larger clusters in felzenszwalb segmentation.
-            ss_sigma : float
-                Width of Gaussian kernel for felzenszwalb segmentation.
-            ss_min_size : int
-                Minimum component size for felzenszwalb segmentation.
-            max_dim :   float
-                Max dimension
-        Returns
-        -------
-            img : ndarray
-                image with region label
-                region label is stored in the 4th value of each pixel [r,g,b,(region)]
-            regions : array of dict
-                [
-                    {
-                        'rect': (left, top, right, bottom),
-                        'labels': [...]
-                    },
-                    ...
-                ]
-    inter_area seems to give much better results esp when upscaling image 
-    """
-    img, scale = func_img_resize_max_dim(img, max_dim, bo_upscale=True, interpolation=cv2.INTER_AREA)
-    _, ss_RoIs = selectivesearch.selective_search(img, scale=ss_scale, sigma= ss_sigma, min_size= ss_min_size)
+
+####################################
+# Region-of-interest
+####################################
+def getSelectiveSearchRois(img, ssScale, ssSigma, ssMinSize, maxDim):
+    # Selective Search
+    #     Parameters
+    #     ----------
+    #         im_orig : ndarray
+    #             Input image
+    #         scale : int
+    #             Free parameter. Higher means larger clusters in felzenszwalb segmentation.
+    #         sigma : float
+    #             Width of Gaussian kernel for felzenszwalb segmentation.
+    #         min_size : int
+    #             Minimum component size for felzenszwalb segmentation.
+    #     Returns
+    #     -------
+    #         img : ndarray
+    #             image with region label
+    #             region label is stored in the 4th value of each pixel [r,g,b,(region)]
+    #         regions : array of dict
+    #             [
+    #                 {
+    #                     'rect': (left, top, right, bottom),
+    #                     'labels': [...]
+    #                 },
+    #                 ...
+    #             ]
+    # inter_area seems to give much better results esp when upscaling image
+    img, scale = imresizeMaxDim(img, maxDim, boUpscale=True, interpolation=cv2.INTER_AREA)
+    _, ssRois = selectivesearch.selective_search(img, scale=ssScale, sigma=ssSigma, min_size=ssMinSize)
     rects = []
-    for ss_RoI in ss_RoIs:
-        x,y,w,h = ss_RoI['rect']
-        rects.append([x,y,x+w,y+h])
+    for ssRoi in ssRois:
+        x, y, w, h = ssRoi['rect']
+        rects.append([x, y, x + w, y + h])
     return rects, img, scale
 
 
-def func_get_grid_of_RoIs(imgWidth, imgHeight, nrGridScales, aspectRatios = [1.0]):
+def getGridRois(imgWidth, imgHeight, nrGridScales, aspectRatios=[1.0]):
     rects = []
     # start adding large ROIs and then smaller ones
     for iter in range(nrGridScales):
@@ -75,152 +74,592 @@ def func_get_grid_of_RoIs(imgWidth, imgHeight, nrGridScales, aspectRatios = [1.0
                     else:
                         wEnd = wStart + cellWidth * aspectRatio
                         hEnd = hStart + cellWidth
-                    if wEnd < imgWidth-1 and hEnd < imgHeight-1:
+                    if wEnd < imgWidth - 1 and hEnd < imgHeight - 1:
                         rects.append([wStart, hStart, wEnd, hEnd])
                     hStart += step
                 wStart += step
     return rects
 
 
-def func_filter_RoIs(rects, maxWidth, maxHeight, roi_minNrPixels, roi_maxNrPixels,
+def filterRois(rects, maxWidth, maxHeight, roi_minNrPixels, roi_maxNrPixels,
                roi_minDim, roi_maxDim, roi_maxAspectRatio):
     filteredRects = []
     filteredRectsSet = set()
     for rect in rects:
-        if tuple(rect) in filteredRectsSet: # excluding rectangles with same co-ordinates
+        if tuple(rect) in filteredRectsSet:  # excluding rectangles with same co-ordinates
             continue
 
         x, y, x2, y2 = rect
         w = x2 - x
         h = y2 - y
-        assert(w>=0 and h>=0)
+        assert (w >= 0 and h >= 0)
 
         # apply filters
         if h == 0 or w == 0 or \
-           x2 > maxWidth or y2 > maxHeight or \
-           w < roi_minDim or h < roi_minDim or \
-           w > roi_maxDim or h > roi_maxDim or \
-           w * h < roi_minNrPixels or w * h > roi_maxNrPixels or \
-           w / h > roi_maxAspectRatio or h / w > roi_maxAspectRatio:
-               continue
+                        x2 > maxWidth or y2 > maxHeight or \
+                        w < roi_minDim or h < roi_minDim or \
+                        w > roi_maxDim or h > roi_maxDim or \
+                                w * h < roi_minNrPixels or w * h > roi_maxNrPixels or \
+                                w / h > roi_maxAspectRatio or h / w > roi_maxAspectRatio:
+            continue
         filteredRects.append(rect)
         filteredRectsSet.add(tuple(rect))
 
     # could combine rectangles using non-maxima surpression or with similar co-ordinates
     # groupedRectangles, weights = cv2.groupRectangles(np.asanyarray(rectsInput, np.float).tolist(), 1, 0.3)
     # groupedRectangles = nms_python(np.asarray(rectsInput, np.float), 0.5)
-    assert(len(filteredRects) > 0)
+    assert (len(filteredRects) > 0)
     return filteredRects
 
 
-def func_read_RoIs(roiDir, subdir, imgFilename):
-    # remove image file extension and make roi.txt file
-    roi_path = os.path.join(roiDir, subdir, imgFilename[:-4] + ".roi.txt")
-    rois = np.loadtxt(roi_path, np.int)
+def readRois(roiDir, subdir, imgFilename):
+    roiPath = os.path.join(roiDir, subdir, imgFilename[:-4] + ".roi.txt")
+    rois = np.loadtxt(roiPath, np.int)
     if len(rois) == 4 and type(rois[0]) == np.int32:  # if only a single ROI in an image
         rois = [rois]
     return rois
 
-#TODO: Generate and parse CNTK files
-def func_read_Gt_annotation(img_path):
-    bboxes_path = img_path[:-4] + '.bboxes.tsv'
-    lbl_path = img_path[:-4] + '.bboxes.label.tsv'
-    bboxes = np.array(func_read_table(bboxes_path), np.int32)
-    labels = func_read_file(lbl_path)
+
+####################################
+# Generate and parse CNTK files
+####################################
+def readGtAnnotation(imgPath):
+    bboxesPath = imgPath[:-4] + ".bboxes.tsv"
+    labelsPath = imgPath[:-4] + ".bboxes.labels.tsv"
+    bboxes = np.array(readTable(bboxesPath), np.int32)
+    labels = readFile(labelsPath)
     assert (len(bboxes) == len(labels))
     return bboxes, labels
 
-def func_get_cntk_input_paths(cntk_file_dir, image_set):
-    cntk_imgs_list_path = os.path.join(cntk_file_dir, image_set + '.txt')
-    cntk_RoI_coords_path = os.path.join(cntk_file_dir, image_set + '.rois.txt')
-    cntk_RoI_label_path = os.path.join(cntk_file_dir, image_set + '.roilabels.txt')
-    cntk_Nr_RoI_path = os.path.join(cntk_file_dir, image_set + '.nrRois.txt')
-    return  cntk_imgs_list_path, cntk_RoI_coords_path, cntk_RoI_label_path, cntk_Nr_RoI_path
 
-def func_RoI_transform_pad_scale_param(img_width, img_height, pad_width, pad_height, bo_resize_image = True):
+def getCntkInputPaths(cntkFilesDir, image_set):
+    cntkImgsListPath = os.path.join(cntkFilesDir, image_set + '.txt')
+    cntkRoiCoordsPath = os.path.join(cntkFilesDir, image_set + '.rois.txt')
+    cntkRoiLabelsPath = os.path.join(cntkFilesDir, image_set + '.roilabels.txt')
+    cntkNrRoisPath = os.path.join(cntkFilesDir, image_set + '.nrRois.txt')
+    return cntkImgsListPath, cntkRoiCoordsPath, cntkRoiLabelsPath, cntkNrRoisPath
+
+
+def roiTransformPadScaleParams(imgWidth, imgHeight, padWidth, padHeight, boResizeImg=True):
     scale = 1.0
-    if bo_resize_image:
-        assert pad_width == pad_height, 'only supported square width = height'
-        scale = 1.0 * pad_width / max(img_width, img_height)
-        img_width = round(img_width * scale)
-        img_height = round(img_height * scale)
+    if boResizeImg:
+        assert padWidth == padHeight, "currently only supported equal width/height"
+        scale = 1.0 * padWidth / max(imgWidth, imgHeight)
+        imgWidth = round(imgWidth * scale)
+        imgHeight = round(imgHeight * scale)
 
-    target_w = pad_width
-    target_h = pad_height
-    w_offset = ((target_w - img_width) / 2.)
-    h_offset = ((target_h - img_height) / 2.)
-    if bo_resize_image and w_offset > 0 and h_offset > 0:
-        raise Exception("ERROR: both offsets are > 0:", img_width, img_height, w_offset, h_offset)
-    if (w_offset < 0 or h_offset < 0):
-        print("ERROR: at least one offset is < 0:", img_width, img_height, w_offset, h_offset, scale)
-    return target_w, target_h, w_offset, h_offset, scale
+    targetw = padWidth
+    targeth = padHeight
+    w_offset = ((targetw - imgWidth) / 2.)
+    h_offset = ((targeth - imgHeight) / 2.)
+    if boResizeImg and w_offset > 0 and h_offset > 0:
+        raise Exception("ERROR: both offsets are > 0:", imgWidth, imgHeight, w_offset, h_offset)
+    if w_offset < 0 or h_offset < 0:
+        print("ERROR: at least one offset is < 0:", imgWidth, imgHeight, w_offset, h_offset, scale)
+    return targetw, targeth, w_offset, h_offset, scale
 
-#TODO: Some Primary functions
-def func_make_dir(directory_path):
-    if not os.path.exists(directory_path):
-        try:
-            os.makedirs(directory_path, exist_ok=True)
-        except OSError:
-            if not os.path.isdir(directory_path):
-                raise
 
-def func_get_files_in_dir(directory, post_fix = ''):
-    file_names = [s for s in os.listdir(directory) if not os.path.isdir(os.path.join(directory, s))]
-    if not post_fix or post_fix == '':
-        return file_names
+def roiTransformPadScale(rect, w_offset, h_offset, scale=1.0):
+    rect = [int(round(scale * d)) for d in rect]
+    rect[0] += w_offset
+    rect[1] += h_offset
+    rect[2] += w_offset
+    rect[3] += h_offset
+    return rect
+
+
+def getCntkRoiCoordsLine(rect, targetw, targeth):
+    # convert from absolute to relative co-ordinates
+    x, y, x2, y2 = rect
+    xrel = float(x) / (1.0 * targetw)
+    yrel = float(y) / (1.0 * targeth)
+    wrel = float(x2 - x) / (1.0 * targetw)
+    hrel = float(y2 - y) / (1.0 * targeth)
+    assert xrel <= 1.0, "Error: xrel should be <= 1 but is " + str(xrel)
+    assert yrel <= 1.0, "Error: yrel should be <= 1 but is " + str(yrel)
+    assert wrel >= 0.0, "Error: wrel should be >= 0 but is " + str(wrel)
+    assert hrel >= 0.0, "Error: hrel should be >= 0 but is " + str(hrel)
+    return " {} {} {} {}".format(xrel, yrel, wrel, hrel)
+
+
+def getCntkRoiLabelsLine(overlaps, thres, nrClasses):
+    # get one hot encoding
+    maxgt = np.argmax(overlaps)
+    if overlaps[maxgt] < thres:  # set to background label if small overlap with GT
+        maxgt = 0
+    oneHot = np.zeros(nrClasses, dtype=int)
+    oneHot[maxgt] = 1
+    oneHotString = " {}".format(" ".join(str(x) for x in oneHot))
+    return oneHotString
+
+
+def cntkPadInputs(currentNrRois, targetNrRois, nrClasses, boxesStr, labelsStr):
+    assert currentNrRois <= targetNrRois, "Current number of rois ({}) should be <= target number of rois ({})".format(
+        currentNrRois, targetNrRois)
+    while currentNrRois < targetNrRois:
+        boxesStr += " 0 0 0 0"
+        labelsStr += " 1" + " 0" * (nrClasses - 1)
+        currentNrRois += 1
+    return boxesStr, labelsStr
+
+
+def checkCntkOutputFile(cntkImgsListPath, cntkOutputPath, cntkNrRois, outputDim):
+    imgPaths = getColumn(readTable(cntkImgsListPath), 1)
+    with open(cntkOutputPath) as fp:
+        for imgIndex in range(len(imgPaths)):
+            if imgIndex % 100 == 1:
+                print("Checking cntk output file, image %d of %d..." % (imgIndex, len(imgPaths)))
+            for roiIndex in range(cntkNrRois):
+                assert (fp.readline() != "")
+        assert (fp.readline() == "")  # test if end-of-file is reached
+
+
+# parse the cntk output file and save the output for each image individually
+def parseCntkOutput(cntkImgsListPath, cntkOutputPath, outParsedDir, cntkNrRois, outputDim,
+                    saveCompressed=False, skipCheck=False, skip5Mod=None):
+    if not skipCheck and skip5Mod is None:
+        checkCntkOutputFile(cntkImgsListPath, cntkOutputPath, cntkNrRois, outputDim)
+
+    # parse cntk output and write file for each image
+    # always read in data for each image to forward file pointer
+    imgPaths = getColumn(readTable(cntkImgsListPath), 1)
+    with open(cntkOutputPath) as fp:
+        for imgIndex in range(len(imgPaths)):
+            line = fp.readline()
+            if skip5Mod is not None and imgIndex % 5 != skip5Mod:
+                print("Skipping image {} (skip5Mod = {})".format(imgIndex, skip5Mod))
+                continue
+            print("Parsing cntk output file, image %d of %d" % (imgIndex, len(imgPaths)))
+
+            # convert to floats
+            data = []
+            values = np.fromstring(line, dtype=float, sep=" ")
+            assert len(values) == cntkNrRois * outputDim, "ERROR: expected dimension of {} but found {}".format(
+                cntkNrRois * outputDim, len(values))
+            for i in range(cntkNrRois):
+                posStart = i * outputDim
+                posEnd = posStart + outputDim
+                currValues = values[posStart:posEnd]
+                data.append(currValues)
+
+            # save
+            data = np.array(data, np.float32)
+            outPath = outParsedDir + str(imgIndex) + ".dat"
+            if saveCompressed:
+                np.savez_compressed(outPath, data)
+            else:
+                np.savez(outPath, data)
+        assert (fp.readline() == "")  # test if end-of-file is reached
+
+
+# parse the cntk labels file and return the labels
+def readCntkRoiLabels(roiLabelsPath, nrRois, roiDim, stopAtImgIndex=None):
+    roiLabels = []
+    for imgIndex, line in enumerate(readFile(roiLabelsPath)):
+        if stopAtImgIndex and imgIndex == stopAtImgIndex:
+            break
+        roiLabels.append([])
+        pos = line.find(b'|roiLabels ')
+        valuesString = line[pos + 10:].strip().split(b' ')
+        assert (len(valuesString) == nrRois * roiDim)
+
+        for boxIndex in range(nrRois):
+            oneHotLabels = [int(s) for s in valuesString[boxIndex * roiDim: (boxIndex + 1) * roiDim]]
+            assert (sum(oneHotLabels) == 1)
+            roiLabels[imgIndex].append(np.argmax(oneHotLabels))
+    return roiLabels
+
+
+# parse the cntk rois file and return the co-ordinates
+def readCntkRoiCoordinates(imgPaths, cntkRoiCoordsPath, nrRois, padWidth, padHeight, stopAtImgIndex=None):
+    roiCoords = []
+    for imgIndex, line in enumerate(readFile(cntkRoiCoordsPath)):
+        if stopAtImgIndex and imgIndex == stopAtImgIndex:
+            break
+        roiCoords.append([])
+        pos = line.find(b'|rois ')
+        valuesString = line[pos + 5:].strip().split(b' ')
+        assert (len(valuesString) == nrRois * 4)
+
+        imgWidth, imgHeight = imWidthHeight(imgPaths[imgIndex])
+        for boxIndex in range(nrRois):
+            rect = [float(s) for s in valuesString[boxIndex * 4: (boxIndex + 1) * 4]]
+            x, y, w, h = rect
+            # convert back from padded-rois-co-ordinates to image co-ordinates
+            rect = getAbsoluteROICoordinates([x, y, x + w, y + h], imgWidth, imgHeight, padWidth, padHeight)
+            roiCoords[imgIndex].append(rect)
+    return roiCoords
+
+
+# convert roi co-ordinates from CNTK file back to original image co-ordinates
+def getAbsoluteROICoordinates(roi, imgWidth, imgHeight, padWidth, padHeight, resizeMethod='padScale'):
+    if roi == [0, 0, 0, 0]:  # if padded roi
+        return [0, 0, 0, 0]
+
+    if resizeMethod == "crop":
+        minDim = min(imgWidth, imgHeight)
+        offsetWidth = 0.5 * abs(imgWidth - imgHeight)
+        if imgWidth >= imgHeight:  # horizontal photo
+            rect = [roi[0] * minDim + offsetWidth, roi[1] * minDim, None, None]
+        else:
+            rect = [roi[0] * minDim, roi[1] * minDim + offsetWidth, None, None]
+        rect[2] = rect[0] + roi[2] * minDim
+        rect[3] = rect[1] + roi[3] * minDim
+
+    elif resizeMethod == "pad" or resizeMethod == "padScale":
+        if resizeMethod == "padScale":
+            scale = float(padWidth) / max(imgWidth, imgHeight)
+            imgWidthScaled = int(round(imgWidth * scale))
+            imgHeightScaled = int(round(imgHeight * scale))
+        else:
+            scale = 1.0
+            imgWidthScaled = imgWidth
+            imgHeightScaled = imgHeight
+
+        w_offset = float(padWidth - imgWidthScaled) / 2.0
+        h_offset = float(padHeight - imgHeightScaled) / 2.0
+        if resizeMethod == "padScale":
+            assert (w_offset == 0 or h_offset == 0)
+
+        x0 = max(roi[0] * padWidth - w_offset, 0)
+        y0 = max(roi[1] * padHeight - h_offset, 0)
+        rect = [x0, y0,
+                x0 + (roi[2] - roi[0]) * padWidth,
+                y0 + (roi[3] - roi[1]) * padHeight]
+        rect = [int(round(r / scale)) for r in rect]
     else:
-        return [s for s in file_names if s.lower().endswith(post_fix)]
+        raise Exception("ERROR: Unknown resize method '%s'" % resizeMethod)
 
-def func_read_file(input_file):
-    #read in binary mode, to avoid problems with end-of-text characters
-    with open(input_file, 'rb') as file:
-        lines = file.readline()
-    return [func_remove_line_end_char(s) for s in lines]
+    assert (min(rect) >= 0 and max(rect[0], rect[2]) <= imgWidth and max(rect[1], rect[3]) <= imgHeight)
+    return rect
 
-def func_read_table(input_file, delimiter = '\t', columns_keep = None):
-    lines = func_read_file(input_file)
-    if columns_keep is not None:
+
+####################################
+# Classifier training / scoring
+####################################
+def getSvmModelPaths(svmDir, experimentName):
+    svmWeightsPath = "{}svmweights_{}.txt".format(svmDir, experimentName)
+    svmBiasPath = "{}svmbias_{}.txt".format(svmDir, experimentName)
+    svmFeatScalePath = "{}svmfeature_scale_{}.txt".format(svmDir, experimentName)
+    return svmWeightsPath, svmBiasPath, svmFeatScalePath
+
+
+def loadSvm(svmDir, experimentName):
+    svmWeightsPath, svmBiasPath, svmFeatScalePath = getSvmModelPaths(svmDir, experimentName)
+    svmWeights = np.loadtxt(svmWeightsPath, np.float32)
+    svmBias = np.loadtxt(svmBiasPath, np.float32)
+    svmFeatScale = np.loadtxt(svmFeatScalePath, np.float32)
+    return svmWeights, svmBias, svmFeatScale
+
+
+def saveSvm(svmDir, experimentName, svmWeights, svmBias, featureScale):
+    svmWeightsPath, svmBiasPath, svmFeatScalePath = getSvmModelPaths(svmDir, experimentName)
+    np.savetxt(svmWeightsPath, svmWeights)
+    np.savetxt(svmBiasPath, svmBias)
+    np.savetxt(svmFeatScalePath, featureScale)
+
+
+def svmPredict(imgIndex, cntkOutputIndividualFilesDir, svmWeights, svmBias, svmFeatScale, roiSize, roiDim,
+               decisionThreshold=0):
+    cntkOutputPath = os.path.join(cntkOutputIndividualFilesDir, str(imgIndex) + ".dat.npz")
+    data = np.load(cntkOutputPath)['arr_0']
+    assert (len(data) == roiSize)
+
+    # get prediction for each roi
+    labels = []
+    maxScores = []
+    for roiIndex in range(roiSize):
+        feat = data[roiIndex]
+        scores = np.dot(svmWeights, feat * 1.0 / svmFeatScale) + svmBias.ravel()
+        assert (len(scores) == roiDim)
+        maxArg = np.argmax(scores[1:]) + 1
+        maxScore = scores[maxArg]
+        if maxScore < decisionThreshold:
+            maxArg = 0
+        labels.append(maxArg)
+        maxScores.append(maxScore)
+    return labels, maxScores
+
+
+def nnPredict(imgIndex, cntkParsedOutputDir, roiSize, roiDim, decisionThreshold=None):
+    cntkOutputPath = os.path.join(cntkParsedOutputDir, str(imgIndex) + ".dat.npz")
+    data = np.load(cntkOutputPath)['arr_0']
+    assert (len(data) == roiSize)
+
+    # get prediction for each roi
+    labels = []
+    maxScores = []
+    for roiIndex in range(roiSize):
+        scores = data[roiIndex]
+        scores = softmax(scores)
+        assert (len(scores) == roiDim)
+        maxArg = np.argmax(scores)
+        maxScore = scores[maxArg]
+        if decisionThreshold and maxScore < decisionThreshold:
+            maxArg = 0
+        labels.append(maxArg)
+        maxScores.append(maxScore)
+    return labels, maxScores
+
+
+def imdbUpdateRoisWithHighGtOverlap(imdb, positivesGtOverlapThreshold):
+    addedPosCounter = 0
+    existingPosCounter = 0
+    for imgIndex in range(imdb.num_images):
+        for boxIndex, gtLabel in enumerate(imdb.roidb[imgIndex]['gt_classes']):
+            if gtLabel > 0:
+                existingPosCounter += 1
+            else:
+                overlaps = imdb.roidb[imgIndex]['gt_overlaps'][boxIndex, :].toarray()[0]
+                maxInd = np.argmax(overlaps)
+                maxOverlap = overlaps[maxInd]
+                if maxOverlap >= positivesGtOverlapThreshold and maxInd > 0:
+                    addedPosCounter += 1
+                    imdb.roidb[imgIndex]['gt_classes'][boxIndex] = maxInd
+    return existingPosCounter, addedPosCounter
+
+
+####################################
+# Visualize results
+####################################
+def visualizeResults(imgPath, roiLabels, roiScores, roiRelCoords, padWidth, padHeight, classes,
+                     nmsKeepIndices=None, boDrawNegativeRois=True, decisionThreshold=0.0):
+    # read and resize image
+    imgWidth, imgHeight = imWidthHeight(imgPath)
+    scale = 800.0 / max(imgWidth, imgHeight)
+    imgDebug = imresize(imread(imgPath), scale)
+    assert (len(roiLabels) == len(roiRelCoords))
+    if roiScores:
+        assert (len(roiLabels) == len(roiScores))
+
+    # draw multiple times to avoid occlusions
+    for iter in range(0, 3):
+        for roiIndex in range(len(roiRelCoords)):
+            label = roiLabels[roiIndex]
+            if roiScores:
+                score = roiScores[roiIndex]
+                if decisionThreshold and score < decisionThreshold:
+                    label = 0
+
+            # init drawing parameters
+            thickness = 1
+            if label == 0:
+                color = (255, 0, 0)
+            else:
+                color = getColorsPalette()[label]
+            rect = [int(scale * i) for i in roiRelCoords[roiIndex]]
+
+            # draw in higher iterations only the detections
+            if iter == 0 and boDrawNegativeRois:
+                drawRectangles(imgDebug, [rect], color=color, thickness=thickness)
+            elif iter == 1 and label > 0:
+                if not nmsKeepIndices or (roiIndex in nmsKeepIndices):
+                    thickness = 4
+                drawRectangles(imgDebug, [rect], color=color, thickness=thickness)
+            elif iter == 2 and label > 0:
+                if not nmsKeepIndices or (roiIndex in nmsKeepIndices):
+                    font = ImageFont.truetype("arial.ttf", 18)
+                    text = classes[label]
+                    if roiScores:
+                        text += "(" + str(round(score, 2)) + ")"
+                    imgDebug = drawText(imgDebug, (rect[0], rect[1]), text, color=(255, 255, 255), font=font,
+                                        colorBackground=color)
+    return imgDebug
+
+
+def applyNonMaximaSuppression(nmsThreshold, labels, scores, coords):
+    # generate input for nms
+    allIndices = []
+    nmsRects = [[[]] for _ in range(max(labels) + 1)]
+    coordsWithScores = np.hstack((coords, np.array([scores]).T))
+    for i in range(max(labels) + 1):
+        indices = np.where(np.array(labels) == i)[0]
+        nmsRects[i][0] = coordsWithScores[indices, :]
+        allIndices.append(indices)
+
+    # call nms
+    _, nmsKeepIndicesList = apply_nms(nmsRects, nmsThreshold)
+    # map back to original roi indices
+    nmsKeepIndices = []
+    for i in range(max(labels) + 1):
+        for keepIndex in nmsKeepIndicesList[i][0]:
+            nmsKeepIndices.append(allIndices[i][keepIndex])  # for keepIndex in nmsKeepIndicesList[i][0]]
+    assert (len(nmsKeepIndices) == len(set(nmsKeepIndices)))  # check if no roi indices was added >1 times
+    return nmsKeepIndices
+
+
+def apply_nms(all_boxes, thresh, boUsePythonImpl=True):
+    """Apply non-maximum suppression to all predicted boxes output by the test_net method."""
+    num_classes = len(all_boxes)
+    num_images = len(all_boxes[0])
+    nms_boxes = [[[] for _ in range(num_images)]
+                 for _ in range(num_classes)]
+    nms_keepIndices = [[[] for _ in range(num_images)]
+                       for _ in range(num_classes)]
+    for cls_ind in range(num_classes):
+        for im_ind in range(num_images):
+            dets = all_boxes[cls_ind][im_ind]
+            if dets == []:
+                continue
+            if boUsePythonImpl:
+                keep = nmsPython(dets, thresh)
+            else:
+                keep = nmsPython(dets, thresh)
+            if len(keep) == 0:
+                continue
+            nms_boxes[cls_ind][im_ind] = dets[keep, :].copy()
+            nms_keepIndices[cls_ind][im_ind] = keep
+    return nms_boxes, nms_keepIndices
+
+
+####################################
+# Wrappers for compatibility with
+# original fastRCNN code
+####################################
+class DummyNet(object):
+    def __init__(self, dim, num_classes, cntkParsedOutputDir):
+        self.name = 'dummyNet'
+        self.cntkParsedOutputDir = cntkParsedOutputDir
+        self.params = {
+            "cls_score": [EasyDict({'data': np.zeros((num_classes, dim), np.float32)}),
+                          EasyDict({'data': np.zeros((num_classes, 1), np.float32)})],
+            "trainers": None,
+        }
+
+
+def im_detect(net, im, boxes, feature_scale=None, bboxIndices=None, boReturnClassifierScore=True,
+              classifier='svm'):  # trainers=None,
+    # Return:
+    #     scores (ndarray): R x K array of object class scores (K includes
+    #         background as object category 0)
+    #     (optional) boxes (ndarray): R x (4*K) array of predicted bounding boxes
+    # load cntk output for the given image
+    cntkOutputPath = os.path.join(net.cntkParsedOutputDir, str(im) + ".dat.npz")
+    cntkOutput = np.load(cntkOutputPath)['arr_0']
+    if bboxIndices is not None:
+        cntkOutput = cntkOutput[bboxIndices, :]  # only keep output for certain rois
+    else:
+        cntkOutput = cntkOutput[:len(boxes), :]  # remove zero-padded rois
+
+    # compute scores for each box and each class
+    scores = None
+    if boReturnClassifierScore:
+        if classifier == 'nn':
+            scores = softmax2D(cntkOutput)
+        elif classifier == 'svm':
+            svmBias = net.params['cls_score'][1].data.transpose()
+            svmWeights = net.params['cls_score'][0].data.transpose()
+            scores = np.dot(cntkOutput * 1.0 / feature_scale, svmWeights) + svmBias
+            assert (np.unique(scores[:, 0]) == 0)  # svm always returns 0 for label 0
+        else:
+            raise Exception('Unsupported any classifier other than nn or svm')
+    return scores, None, cntkOutput
+
+
+####################################
+# Subset of helper library
+# used in the fastRCNN code
+####################################
+# Typical meaning of variable names -- Computer Vision:
+#    pt                     = 2D point (column,row)
+#    img                    = image
+#    width,height (or w/h)  = image dimensions
+#    bbox                   = bbox object (stores: left, top,right,bottom co-ordinates)
+#    rect                   = rectangle (order: left, top, right, bottom)
+#    angle                  = rotation angle in degree
+#    scale                  = image up/downscaling factor
+
+# Typical meaning of variable names -- general:
+#    lines,strings = list of strings
+#    line,string   = single string
+#    xmlString     = string with xml tags
+#    table         = 2D row/column matrix implemented using a list of lists
+#    row,list1D    = single row in a table, i.e. single 1D-list
+#    rowItem       = single item in a row
+#    list1D        = list of items, not necessarily strings
+#    item          = single item of a list1D
+#    slotValue     = e.g. "terminator" in: play <movie> terminator </movie>
+#    slotTag       = e.g. "<movie>" or "</movie>" in: play <movie> terminator </movie>
+#    slotName      = e.g. "movie" in: play <movie> terminator </movie>
+#    slot          = e.g. "<movie> terminator </movie>" in: play <movie> terminator </movie>
+# TODO: Some Primary functions
+
+
+
+def makeDirectory(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+
+def getFilesInDirectory(directory, postfix=""):
+    fileNames = [s for s in os.listdir(directory) if not os.path.isdir(os.path.join(directory, s))]
+    if not postfix or postfix == "":
+        return fileNames
+    else:
+        return [s for s in fileNames if s.lower().endswith(postfix)]
+
+
+def readFile(inputFile):
+    # reading as binary, to avoid problems with end-of-text characters
+    # note that readlines() does not remove the line ending characters
+    with open(inputFile, 'rb') as f:
+        lines = f.readlines()
+    return [removeLineEndCharacters(s) for s in lines]
+
+
+def readTable(inputFile, delimiter='\t', columnsToKeep=None):
+    lines = readFile(inputFile);
+    if columnsToKeep is not None:
         header = lines[0].split(delimiter)
         print('deactivated function listFindItems')
         input()
-        # columns_to_keep_indices = listFindItems(header, columns_keep)
-        columns_to_keep_indices = []
+        # columnsToKeepIndices = listFindItems(header, columnsToKeep)
+        columnsToKeepIndices = []
     else:
-        columns_to_keep_indices = None
-    return func_split_strings(lines, delimiter, columns_to_keep_indices)
+        columnsToKeepIndices = None;
+    return splitStrings(lines, delimiter, columnsToKeepIndices)
 
-def func_get_column(table, column_index):
-    column = []
+
+def getColumn(table, columnIndex):
+    column = [];
     for row in table:
-        column.append(row[column_index])
+        column.append(row[columnIndex])
     return column
 
-def func_delete_file(file_path):
-    if os.path.exists(file_path):
-        try:
-            os.remove(file_path)
-        except OSError as argument:
-            print('Exception occurred func_delete_file {0}'.format(argument))
-            input()
 
-def func_delete_all_files_in_dir(directory, file_type, bo_prompt_user = False):
-    if bo_prompt_user:
-        #Comfirm delete all file
-        user_input = input('--> INPUT: Press "y" to delete files in directory ' + directory + ": ")
-        if not (user_input.lower() == 'y' or user_input.lower() == 'yes'):
-            print('User input is {0}: exiting now'.format(user_input))
-            exit()
-        #otherwise delete all
-        for filename in func_get_files_in_dir(directory):
-            if file_type is None or filename.lower().endswith(file_type):
-                func_delete_file(directory + '/' + filename)
+def deleteFile(filePath):
+    if os.path.exists(filePath):
+        os.remove(filePath)
 
-def func_write_to_file(output_file, lines):
-    with open(output_file, 'w') as file:
+
+def writeFile(outputFile, lines):
+    with open(outputFile, 'w') as f:
         for line in lines:
-            file.write('%s\n' % line)
+            f.write("%s\n" % line)
 
-def func_remove_line_end_char(line):
+
+def writeTable(outputFile, table):
+    lines = tableToList1D(table)
+    writeFile(outputFile, lines)
+
+
+def deleteFile(filePath):
+    if os.path.exists(filePath):
+        os.remove(filePath)
+
+
+def deleteAllFilesInDirectory(directory, fileEndswithString, boPromptUser=False):
+    if boPromptUser:
+        userInput = input('--> INPUT: Press "y" to delete files in directory ' + directory + ": ")
+        if not (userInput.lower() == 'y' or userInput.lower() == 'yes'):
+            print("User input is %s: exiting now." % userInput)
+            exit()
+    for filename in getFilesInDirectory(directory):
+        if fileEndswithString == None or filename.lower().endswith(fileEndswithString):
+            deleteFile(directory + "/" + filename)
+
+
+def removeLineEndCharacters(line):
     if line.endswith(b'\r\n'):
         return line[:-2]
     elif line.endswith(b'\n'):
@@ -229,210 +668,254 @@ def func_remove_line_end_char(line):
         return line
 
 
-def func_split_individual_string(string, delimiter = '\t', column_to_keep_indices = None):
-    if string is None:
+def splitString(string, delimiter='\t', columnsToKeepIndices=None):
+    if string == None:
         return None
     items = string.decode('utf-8').split(delimiter)
-    if column_to_keep_indices is not None:
+    if columnsToKeepIndices != None:
         print('deactivated getColumns func')
         input()
-        # items = getColumns([items], columnsToKeepIndices)
+        # items = getColumn([items], columnsToKeepIndices)
         items = items[0]
     return items
 
-def func_split_strings(strings, delimiter, column_to_keep_indices = None):
-    table = [func_split_individual_string(string, delimiter, column_to_keep_indices) for string in strings]
+
+def splitStrings(strings, delimiter, columnsToKeepIndices=None):
+    table = [splitString(string, delimiter, columnsToKeepIndices) for string in strings]
     return table
 
-def func_find(list_1d, func):
-    return [index for (index, item) in enumerate(list_1d) if func(item)]
 
-def func_table_to_list_1d(table, delimiter = '\t'):
-    output = [delimiter.join([str(s) for s in row]) for row in table]
-    return output
+def find(list1D, func):
+    return [index for (index, item) in enumerate(list1D) if func(item)]
 
-def func_sort_dict(dictionary, sort_index = 0, reverse_sort = False):
-    return sorted(dictionary.items(), key= lambda x : x[sort_index], reverse= reverse_sort)
 
-def func_imread(img_path, bo_throw_error_if_exif = True):
-    if not os.path.exists(img_path):
-        raise  Exception('Error: func_imread image path does not exist')
-    rotation = func_rotation_from_exif_tag(img_path)
-    if bo_throw_error_if_exif and rotation != 0:
-        raise Exception('Error: func_imread exif rotation tag set, image needs to be rotated by {0} degree'.format(rotation))
-    img = cv2.imread(img_path)
+def tableToList1D(table, delimiter='\t'):
+    return [delimiter.join([str(s) for s in row]) for row in table]
+
+
+def sortDictionary(dictionary, sortIndex=0, reverseSort=False):
+    return sorted(dictionary.items(), key=lambda x: x[sortIndex], reverse=reverseSort)
+
+
+def imread(imgPath, boThrowErrorIfExifRotationTagSet=True):
+    if not os.path.exists(imgPath):
+         raise Exception("ERROR: image path does not exist.")
+    rotation = rotationFromExifTag(imgPath)
+    if boThrowErrorIfExifRotationTagSet and rotation != 0:
+        print("Error: exif roation tag set, image needs to be rotated by %d degrees." % rotation)
+    img = cv2.imread(imgPath)
     if img is None:
-        raise Exception('Error: func_imread can not load image at {0}'.format(img_path))
+        raise print("ERROR: cannot load image " + imgPath)
+
     if rotation != 0:
+        # clone_img = Image.fromarray(img).rotate(-90, expand=True, resample=Image.BILINEAR)
         rows, cols, _ = img.shape
-        tmp = cv2.getRotationMatrix2D((cols / 2, rows / 2), -90, 1)
-        clone_img = cv2.warpAffine(img, tmp, (cols, rows))
+        M = cv2.getRotationMatrix2D((cols / 2, rows / 2), -90, 1)
+        clone_img = cv2.warpAffine(img, M, (cols, rows))
+        # clone_img = cv2.rotate(img, -90)  # got this error occassionally without copy "TypeError: Layout of the output array img is incompatible with cv::Mat"
         return clone_img
     return img
 
-def func_rotation_from_exif_tag(img_path):
-    tag_inverted = {v: k for k, v in TAGS.items()}
-    orientation_ex_if_id = tag_inverted['Orientation']
+
+def rotationFromExifTag(imgPath):
+    TAGSinverted = {v: k for k, v in TAGS.items()}
+    orientationExifId = TAGSinverted['Orientation']
     try:
-        image_exif_tag = Image.open(img_path)._getexif()
+        imageExifTags = Image.open(imgPath)._getexif()
     except:
-        image_exif_tag = None
+        imageExifTags = None
+
     # rotate the image if orientation exif tag is present
-    #
     rotation = 0
-    if image_exif_tag is not None and orientation_ex_if_id is not None and orientation_ex_if_id in image_exif_tag:
-        orientation = image_exif_tag[orientation_ex_if_id]
+    if imageExifTags is not None and orientationExifId is not None and orientationExifId in imageExifTags:
+        orientation = imageExifTags[orientationExifId]
+        # print ("orientation = " + str(imageExifTags[orientationExifId]))
         if orientation == 1 or orientation == 0:
-            rotation = 0
+            rotation = 0  # no need to do anything
         elif orientation == 6:
             rotation = -90
         elif orientation == 8:
             rotation = 90
         else:
-            raise Exception('Error: func_rotation_from_exif_tag orientation = {0} not supported'.format(orientation))
+            raise Exception("ERROR: orientation = " + str(orientation) + " not_supported!")
     return rotation
 
-def func_img_write(img, img_path):
-    cv2.imwrite(img_path, img)
 
-def func_img_resize(img, scale, interpolation = cv2.INTER_LINEAR):
-    return cv2.resize(img, (0,0), fx= scale, fy = scale, interpolation=interpolation)
+def imwrite(img, imgPath):
+    cv2.imwrite(imgPath, img)
 
-def func_img_resize_max_dim(img, max_dim, bo_upscale = False, interpolation = cv2.INTER_LINEAR):
-    scale = 1.0* max_dim/ max(img.shape[:2])
-    if scale < 1 or bo_upscale:
-        img = func_img_resize(img, scale, interpolation)
+
+def imresize(img, scale, interpolation=cv2.INTER_LINEAR):
+    return cv2.resize(img, (0, 0), fx=scale, fy=scale, interpolation=interpolation)
+
+
+def imresizeMaxDim(img, maxDim, boUpscale=False, interpolation=cv2.INTER_LINEAR):
+    scale = 1.0 * maxDim / max(img.shape[:2])
+    if scale < 1 or boUpscale:
+        img = imresize(img, scale, interpolation)
     else:
         scale = 1.0
     return img, scale
 
-def func_img_width_height(input_img):
-    width, height = Image.open(input_img).size
+
+def imWidth(input_img):
+    return imWidthHeight(input_img)[0]
+
+
+def imHeight(input_img):
+    return imWidthHeight(input_img)[1]
+
+
+def imWidthHeight(input_img):
+    width, height = Image.open(input_img).size  # this does not load the full image
     return width, height
 
-def func_img_array_width_height(input_img):
+
+def imArrayWidth(input_img):
+    return imArrayWidthHeight(input_img)[0]
+
+
+def imArrayHeight(input_img):
+    return imArrayWidthHeight(input_img)[1]
+
+
+def imArrayWidthHeight(input_img):
     width, height = input_img.shape
     return width, height
 
-def func_img_show(img, wait_duration = 0, max_dim = None, window_name = 'img'):
-    if isinstance(img, str):
-#test if 'img' is a string
+
+def imshow(img, waitDuration=0, maxDim=None, windowName='img'):
+    if isinstance(img, str):  # test if 'img' is a string
         img = cv2.imread(img)
-    if max_dim is not None:
-        scale_val = 1.0*max_dim / max(img.shape[:2])
-        if scale_val < 1:
-            img = func_img_resize(img, scale_val)
-    cv2.imshow(window_name, img)
-    cv2.waitKey(wait_duration)
+    if maxDim is not None:
+        scaleVal = 1.0 * maxDim / max(img.shape[:2])
+        if scaleVal < 1:
+            img = imresize(img, scaleVal)
+    cv2.imshow(windowName, img)
+    cv2.waitKey(waitDuration)
 
-def func_to_int(list_1d):
-    return [int(float(x)) for x in list_1d]
 
-def func_draw_rectangles(img, rectangles, color = (0, 255, 0), thickness = 2):
-    for rect in rectangles:
-        pt1 = tuple(func_to_int(rect[0:2]))
-        pt2 = tuple(func_to_int(rect[2:]))
+def drawRectangles(img, rects, color=(0, 255, 0), thickness=2):
+    for rect in rects:
+        pt1 = tuple(ToIntegers(rect[0:2]))
+        pt2 = tuple(ToIntegers(rect[2:]))
         cv2.rectangle(img, pt1, pt2, color, thickness)
 
-def func_draw_crossbar(img, pt):
-    (x,y) = pt
+
+def drawCrossbar(img, pt):
+    (x, y) = pt
     cv2.rectangle(img, (0, y), (x, y), (255, 255, 0), 1)
     cv2.rectangle(img, (x, 0), (x, y), (255, 255, 0), 1)
-    cv2.rectangle(img, (img.shape[1],y), (x, y), (255, 255, 0), 1)
+    cv2.rectangle(img, (img.shape[1], y), (x, y), (255, 255, 0), 1)
     cv2.rectangle(img, (x, img.shape[0]), (x, y), (255, 255, 0), 1)
 
-def func_pt_clip(pt, max_width, max_height):
+
+def ptClip(pt, maxWidth, maxHeight):
     pt = list(pt)
     pt[0] = max(pt[0], 0)
     pt[1] = max(pt[1], 0)
-    pt[0] = min(pt[0], max_width)
-    pt[1] = min(pt[1], max_height)
+    pt[0] = min(pt[0], maxWidth)
+    pt[1] = min(pt[1], maxHeight)
     return pt
 
-def func_img_convert_cv_to_pil(img):
-    cv2_im = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-    return Image.fromarray(cv2_im)
 
-def func_img_convert_pil_to_cv(pil_img):
-    rgb = pil_img.convert('RGB')
-    return np.array(rgb).copy()[:, :, ::-1]
-
-def func_pil_draw_text(pil_img, pt, text, text_width=None, color = (255,255,255), background_color = None, font = None):
+def drawText(img, pt, text, textWidth=None, color=(255, 255, 255), colorBackground=None, font=None):
     # loading default value in function call so the script won't cause errors in system where
     # "arial.ttf" cannot be found
     if font is None:
         font = ImageFont.truetype("arial.ttf", 16)
-    text_y = pt[1]
-    #image object for drawing
-    draw = ImageDraw.Draw(pil_img)
-    if text_width is None:
-        #wrap text
+    pilImg = imconvertCv2Pil(img)
+    pilImg = pilDrawText(pilImg, pt, text, textWidth, color, colorBackground, font)
+    return imconvertPil2Cv(pilImg)
+
+
+def pilDrawText(pilImg, pt, text, textWidth=None, color=(255, 255, 255), colorBackground=None, font=None):
+    # loading default value in function call so the script won't cause errors in system where
+    # "arial.ttf" cannot be found
+    if font is None:
+        font = ImageFont.truetype("arial.ttf", 16)
+    textY = pt[1]
+    draw = ImageDraw.Draw(pilImg)
+    if textWidth is None:
         lines = [text]
     else:
-        lines = textwrap.wrap(text, width=text_width)
+        lines = textwrap.wrap(text, width=textWidth)
     for line in lines:
-        #textbox with size of width and height
         width, height = font.getsize(line)
-        if background_color is not None:
-            draw.rectangle((pt[0], pt[1], pt[0] + width, pt[1] + height), fill=tuple(background_color[::-1]))
-        draw.text(pt, line, fill = tuple(color), font = font)
-        text_y += height
-    return pil_img
+        if colorBackground != None:
+            draw.rectangle((pt[0], pt[1], pt[0] + width, pt[1] + height), fill=tuple(colorBackground[::-1]))
+        draw.text(pt, line, fill=tuple(color), font=font)
+        textY += height
+    return pilImg
 
-def func_draw_text(img, pt, text, text_width, color, background_color, font):
-    if font is None:
-        font = ImageFont.truetype('arial.ttf', 16)
-    pil_img = func_img_convert_cv_to_pil(img)
-    pil_img = func_pil_draw_text(pil_img, pt, text, text_width,color, background_color, font)
-    return func_img_convert_pil_to_cv(pil_img)
 
-def func_get_colors_palette():
+def getColorsPalette():
     colors = [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]]
     for i in range(5):
         for dim in range(0, 3):
             for s in (0.25, 0.5, 0.75):
                 if colors[i][dim] != 0:
-                    new_color = copy.deepcopy(colors[i])
-                    new_color[dim] = int(round(new_color[dim] * s))
-                    colors.append(new_color)
+                    newColor = copy.deepcopy(colors[i])
+                    newColor[dim] = int(round(newColor[dim] * s))
+                    colors.append(newColor)
     return colors
 
-def func_soft_max(vect):
-    exp_vec = np.exp(vect)
-    if max(exp_vec) == np.inf:
-        out_vec = np.zeros(len(exp_vec))
-        out_vec[exp_vec == np.inf] = vect[exp_vec == np.inf]
-        out_vec = out_vec / np.sum(out_vec)
-    else:
-        out_vec = exp_vec / np.sum(exp_vec)
-    return out_vec
 
-def func_soft_max_2d(weights):
-    e = np.exp(weights)
-    dist = e/ np.sum(e, axis=1)[:, np.newaxis]
+def imconvertPil2Cv(pilImg):
+    rgb = pilImg.convert('RGB')
+    return np.array(rgb).copy()[:, :, ::-1]
+
+
+def imconvertCv2Pil(img):
+    cv2_im = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    return Image.fromarray(cv2_im)
+
+
+def ToIntegers(list1D):
+    return [int(float(x)) for x in list1D]
+
+
+def softmax(vec):
+    expVec = np.exp(vec)
+    # TODO: check numerical stability
+    if max(expVec) == np.inf:
+        outVec = np.zeros(len(expVec))
+        outVec[expVec == np.inf] = vec[expVec == np.inf]
+        outVec = outVec / np.sum(outVec)
+    else:
+        outVec = expVec / np.sum(expVec)
+    return outVec
+
+
+def softmax2D(w):
+    e = np.exp(w)
+    dist = e / np.sum(e, axis=1)[:, np.newaxis]
     return dist
 
-def func_get_dictionary(keys, values, bo_convert_value_to_int = True):
+
+def getDictionary(keys, values, boConvertValueToInt=True):
     dictionary = {}
-    for key,value in zip(keys, values):
-        if bo_convert_value_to_int:
+    for key, value in zip(keys, values):
+        if boConvertValueToInt:
             value = int(value)
         dictionary[key] = value
     return dictionary
+
 
 class Bbox:
     MAX_VALID_DIM = 100000
     left = top = right = bottom = None
 
     def __init__(self, left, top, right, bottom):
-        self.left   = int(round(float(left)))
-        self.top    = int(round(float(top)))
-        self.right  = int(round(float(right)))
+        self.left = int(round(float(left)))
+        self.top = int(round(float(top)))
+        self.right = int(round(float(right)))
         self.bottom = int(round(float(bottom)))
         self.standardize()
 
     def __str__(self):
-        return 'Bbox object: left = {0}, top = {1}, right = {2}, bottom = {3}'.format(self.left, self.top, self.right, self.bottom)
+        return ("Bbox object: left = {0}, top = {1}, right = {2}, bottom = {3}".format(self.left, self.top, self.right,
+                                                                                       self.bottom))
 
     def __repr__(self):
         return str(self)
@@ -447,82 +930,85 @@ class Bbox:
         return min([self.left, self.top, self.right, self.bottom])
 
     def width(self):
-        width  = self.right - self.left + 1
-        assert(width>=0)
+        width = self.right - self.left + 1
+        assert (width >= 0)
         return width
 
     def height(self):
         height = self.bottom - self.top + 1
-        assert(height>=0)
+        assert (height >= 0)
         return height
 
-    def surface_area(self):
+    def surfaceArea(self):
         return self.width() * self.height()
 
-    def get_overlap_Bbox(self, bbox):
+    def getOverlapBbox(self, bbox):
         left1, top1, right1, bottom1 = self.rect()
         left2, top2, right2, bottom2 = bbox.rect()
-        overlap_left = max(left1, left2)
-        overlap_top = max(top1, top2)
-        overlap_right = min(right1, right2)
-        overlap_bottom = min(bottom1, bottom2)
-        if (overlap_left>overlap_right) or (overlap_top>overlap_bottom):
+        overlapLeft = max(left1, left2)
+        overlapTop = max(top1, top2)
+        overlapRight = min(right1, right2)
+        overlapBottom = min(bottom1, bottom2)
+        if (overlapLeft > overlapRight) or (overlapTop > overlapBottom):
             return None
         else:
-            return Bbox(overlap_left, overlap_top, overlap_right, overlap_bottom)
+            return Bbox(overlapLeft, overlapTop, overlapRight, overlapBottom)
 
-    def standardize(self): #NOTE: every setter method should call standardize
-        new_left   = min(self.left, self.right)
-        new_top    = min(self.top, self.bottom)
-        new_right  = max(self.left, self.right)
-        new_bottom = max(self.top, self.bottom)
-        self.left = new_left
-        self.top = new_top
-        self.right = new_right
-        self.bottom = new_bottom
+    def standardize(self):  # NOTE: every setter method should call standardize
+        leftNew = min(self.left, self.right)
+        topNew = min(self.top, self.bottom)
+        rightNew = max(self.left, self.right)
+        bottomNew = max(self.top, self.bottom)
+        self.left = leftNew
+        self.top = topNew
+        self.right = rightNew
+        self.bottom = bottomNew
 
     def crop(self, maxWidth, maxHeight):
-        new_left   = min(max(self.left,   0), maxWidth)
-        new_top   = min(max(self.top,    0), maxHeight)
-        new_right  = min(max(self.right,  0), maxWidth)
-        new_bottom = min(max(self.bottom, 0), maxHeight)
-        return Bbox(new_left, new_top, new_right, new_bottom)
+        leftNew = min(max(self.left, 0), maxWidth)
+        topNew = min(max(self.top, 0), maxHeight)
+        rightNew = min(max(self.right, 0), maxWidth)
+        bottomNew = min(max(self.bottom, 0), maxHeight)
+        return Bbox(leftNew, topNew, rightNew, bottomNew)
 
-    def is_valid(self):
-        if self.left>=self.right or self.top>=self.bottom:
+    def isValid(self):
+        if self.left >= self.right or self.top >= self.bottom:
             return False
         if min(self.rect()) < -self.MAX_VALID_DIM or max(self.rect()) > self.MAX_VALID_DIM:
             return False
         return True
 
-def func_get_enclosing_Bbox(pts):
+
+def getEnclosingBbox(pts):
     left = top = float('inf')
     right = bottom = float('-inf')
     for pt in pts:
-        left   = min(left,   pt[0])
-        top    = min(top,    pt[1])
-        right  = max(right,  pt[0])
+        left = min(left, pt[0])
+        top = min(top, pt[1])
+        right = max(right, pt[0])
         bottom = max(bottom, pt[1])
     return Bbox(left, top, right, bottom)
 
-def func_bboxComputeOverlapVoc(bbox1, bbox2):
-    surface_rect1 = bbox1.surface_area()
-    surface_rect2 = bbox2.surface_area()
-    overlap_Bbox = bbox1.get_overlap_Bbox(bbox2)
-    if overlap_Bbox is None:
+
+def bboxComputeOverlapVoc(bbox1, bbox2):
+    surfaceRect1 = bbox1.surfaceArea()
+    surfaceRect2 = bbox2.surfaceArea()
+    overlapBbox = bbox1.getOverlapBbox(bbox2)
+    if overlapBbox is None:
         return 0
     else:
-        surface_overlap = overlap_Bbox.surface_area()
-        overlap = max(0.0, 1.0 * surface_overlap / (surface_rect1 + surface_rect2 - surface_overlap))
-        assert (0.0 <= overlap <= 1.0)
+        surfaceOverlap = overlapBbox.surfaceArea()
+        overlap = max(0, 1.0 * surfaceOverlap / (surfaceRect1 + surfaceRect2 - surfaceOverlap))
+        assert (0 <= overlap <= 1)
         return overlap
 
-def func_compute_average_precision(recalls, precisions, use_07_metric=False):
+
+def computeAveragePrecision(recalls, precisions, use_07_metric=False):
     """ ap = voc_ap(recalls, precisions, [use_07_metric])
-        Compute VOC AP given precision and recall.
-        If use_07_metric is true, uses the
-        VOC 07 11 point method (default:False).
-        """
+    Compute VOC AP given precision and recall.
+    If use_07_metric is true, uses the
+    VOC 07 11 point method (default:False).
+    """
     if use_07_metric:
         # 11 point metric
         ap = 0.
@@ -535,17 +1021,17 @@ def func_compute_average_precision(recalls, precisions, use_07_metric=False):
     else:
         # correct AP calculation
         # first append sentinel values at the end
-        m_recalls = np.concatenate(([0.], recalls, [1.]))
-        m_precisions = np.concatenate(([0.], precisions, [0.]))
+        mrecalls = np.concatenate(([0.], recalls, [1.]))
+        mprecisions = np.concatenate(([0.], precisions, [0.]))
 
         # compute the precision envelope
-        for i in range(m_precisions.size - 1, 0, -1):
-            m_precisions[i - 1] = np.maximum(m_precisions[i - 1], m_precisions[i])
+        for i in range(mprecisions.size - 1, 0, -1):
+            mprecisions[i - 1] = np.maximum(mprecisions[i - 1], mprecisions[i])
 
         # to calculate area under PR curve, look for points
         # where X axis (recall) changes value
-        i = np.where(m_recalls[1:] != m_recalls[:-1])[0]
+        i = np.where(mrecalls[1:] != mrecalls[:-1])[0]
 
         # and sum (\Delta recall) * prec
-        ap = np.sum((m_recalls[i + 1] - m_recalls[i]) * m_precisions[i + 1])
+        ap = np.sum((mrecalls[i + 1] - mrecalls[i]) * mprecisions[i + 1])
     return ap
