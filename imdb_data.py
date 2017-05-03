@@ -1,5 +1,5 @@
 from __future__ import print_function
-from base_directory.cntk_helpers import *
+from cntk_helpers import *
 import scipy.sparse
 import pickle as cp
 import numpy as np

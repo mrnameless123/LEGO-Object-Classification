@@ -11,19 +11,20 @@ datasetName = "Grocery"
 # datasetName = "pascalVoc"
 # datasetName = "pascalVoc_aeroplanesOnly"
 
-
+# directories
+rootDir = os.path.dirname(os.path.realpath(sys.argv[0])) + "/"
+imgDir = os.path.join(rootDir, "./DataSets/" + datasetName+ "/")
+pascalDataDir = os.path.join(rootDir, "./DataSets/Pascal/")
 ############################
 # default parameters
 ############################
 # cntk params
-cntk_nrRois = 150      # how many ROIs to zero-pad. Use 100 to get quick result. Use 2000 to get good results.
+cntk_nrRois = 100      # how many ROIs to zero-pad. Use 100 to get quick result. Use 2000 to get good results.
 cntk_padWidth = 1000
 cntk_padHeight = 1000
 
 # directories
-rootDir = os.path.dirname(os.path.realpath(sys.argv[0])) + "/"
-imgDir = os.path.join(rootDir, "../../DataSets/" + datasetName+ "/")
-pascalDataDir = os.path.join(rootDir, "../../DataSets/Pascal/")
+
 
 # derived directories
 procDir = os.path.join(rootDir, "proc/" + datasetName + "_{}/".format(cntk_nrRois))
@@ -114,7 +115,7 @@ elif datasetName.startswith("pascalVoc"):
         print ("Number of {} images: {}".format(image_set, imdbs[image_set].num_images))
 
 else:
-     ERROR
+     raise Exception('Only support Groceries and pascalVoc')
 
 
 ############################

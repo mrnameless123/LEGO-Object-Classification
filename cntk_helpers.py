@@ -5,12 +5,11 @@ import numpy as np
 import selectivesearch
 from easydict import EasyDict
 from fastRCNN.nms import nms as nmsPython
-from PIL import Image, ImageFont, ImageDraw
 from builtins import range
-import cv2, copy, textwrap
-# from PIL import Image, ImageFont, ImageDraw
-from PIL.ExifTags import TAGS
 
+import cv2, copy, textwrap
+from PIL import Image, ImageFont, ImageDraw
+from PIL.ExifTags import TAGS
 available_font = "arial.ttf"
 try:
     dummy = ImageFont.truetype(available_font, 16)
@@ -153,7 +152,8 @@ def roiTransformPadScaleParams(imgWidth, imgHeight, padWidth, padHeight, boResiz
     w_offset = ((targetw - imgWidth) / 2.)
     h_offset = ((targeth - imgHeight) / 2.)
     if boResizeImg and w_offset > 0 and h_offset > 0:
-        raise Exception("ERROR: both offsets are > 0:", imgWidth, imgHeight, w_offset, h_offset)
+        print("ERROR: both offsets are > 0:", imgWidth, imgHeight, w_offset, h_offset)
+        raise Exception("ERROR: both offsets are > 0:",  imgWidth, imgHeight, w_offset, h_offset)
     if w_offset < 0 or h_offset < 0:
         print("ERROR: at least one offset is < 0:", imgWidth, imgHeight, w_offset, h_offset, scale)
     return targetw, targeth, w_offset, h_offset, scale
@@ -299,7 +299,7 @@ def getAbsoluteROICoordinates(roi, imgWidth, imgHeight, padWidth, padHeight, res
     if resizeMethod == "crop":
         minDim = min(imgWidth, imgHeight)
         offsetWidth = 0.5 * abs(imgWidth - imgHeight)
-        if imgWidth >= imgHeight:  # horizontal photo
+        if (imgWidth >= imgHeight):  # horizontal photo
             rect = [roi[0] * minDim + offsetWidth, roi[1] * minDim, None, None]
         else:
             rect = [roi[0] * minDim, roi[1] * minDim + offsetWidth, None, None]
@@ -328,8 +328,8 @@ def getAbsoluteROICoordinates(roi, imgWidth, imgHeight, padWidth, padHeight, res
                 y0 + (roi[3] - roi[1]) * padHeight]
         rect = [int(round(r / scale)) for r in rect]
     else:
+        print("ERROR: Unknown resize method '%s'" % resizeMethod)
         raise Exception("ERROR: Unknown resize method '%s'" % resizeMethod)
-
     assert (min(rect) >= 0 and max(rect[0], rect[2]) <= imgWidth and max(rect[1], rect[3]) <= imgHeight)
     return rect
 
@@ -479,6 +479,7 @@ def applyNonMaximaSuppression(nmsThreshold, labels, scores, coords):
 
     # call nms
     _, nmsKeepIndicesList = apply_nms(nmsRects, nmsThreshold)
+
     # map back to original roi indices
     nmsKeepIndices = []
     for i in range(max(labels) + 1):
@@ -536,7 +537,7 @@ def im_detect(net, im, boxes, feature_scale=None, bboxIndices=None, boReturnClas
     # load cntk output for the given image
     cntkOutputPath = os.path.join(net.cntkParsedOutputDir, str(im) + ".dat.npz")
     cntkOutput = np.load(cntkOutputPath)['arr_0']
-    if bboxIndices is not None:
+    if bboxIndices != None:
         cntkOutput = cntkOutput[bboxIndices, :]  # only keep output for certain rois
     else:
         cntkOutput = cntkOutput[:len(boxes), :]  # remove zero-padded rois
@@ -552,7 +553,7 @@ def im_detect(net, im, boxes, feature_scale=None, bboxIndices=None, boReturnClas
             scores = np.dot(cntkOutput * 1.0 / feature_scale, svmWeights) + svmBias
             assert (np.unique(scores[:, 0]) == 0)  # svm always returns 0 for label 0
         else:
-            raise Exception('Unsupported any classifier other than nn or svm')
+            raise Exception('Programme is  not supported for any classifier other than nn and svm')
     return scores, None, cntkOutput
 
 
@@ -582,9 +583,6 @@ def im_detect(net, im, boxes, feature_scale=None, bboxIndices=None, boReturnClas
 #    slotTag       = e.g. "<movie>" or "</movie>" in: play <movie> terminator </movie>
 #    slotName      = e.g. "movie" in: play <movie> terminator </movie>
 #    slot          = e.g. "<movie> terminator </movie>" in: play <movie> terminator </movie>
-# TODO: Some Primary functions
-
-
 
 def makeDirectory(directory):
     if not os.path.exists(directory):
@@ -609,7 +607,7 @@ def readFile(inputFile):
 
 def readTable(inputFile, delimiter='\t', columnsToKeep=None):
     lines = readFile(inputFile);
-    if columnsToKeep is not None:
+    if columnsToKeep != None:
         header = lines[0].split(delimiter)
         print('deactivated function listFindItems')
         input()
@@ -655,7 +653,7 @@ def deleteAllFilesInDirectory(directory, fileEndswithString, boPromptUser=False)
             print("User input is %s: exiting now." % userInput)
             exit()
     for filename in getFilesInDirectory(directory):
-        if fileEndswithString == None or filename.lower().endswith(fileEndswithString):
+        if fileEndswithString is None or filename.lower().endswith(fileEndswithString):
             deleteFile(directory + "/" + filename)
 
 
@@ -669,20 +667,20 @@ def removeLineEndCharacters(line):
 
 
 def splitString(string, delimiter='\t', columnsToKeepIndices=None):
-    if string == None:
+    if string is None:
         return None
     items = string.decode('utf-8').split(delimiter)
-    if columnsToKeepIndices != None:
+    if columnsToKeepIndices is not None:
         print('deactivated getColumns func')
         input()
         # items = getColumn([items], columnsToKeepIndices)
         items = items[0]
-    return items
+    return items;
 
 
 def splitStrings(strings, delimiter, columnsToKeepIndices=None):
     table = [splitString(string, delimiter, columnsToKeepIndices) for string in strings]
-    return table
+    return table;
 
 
 def find(list1D, func):
@@ -699,16 +697,17 @@ def sortDictionary(dictionary, sortIndex=0, reverseSort=False):
 
 def imread(imgPath, boThrowErrorIfExifRotationTagSet=True):
     if not os.path.exists(imgPath):
-         raise Exception("ERROR: image path does not exist.")
+        print("ERROR: image path does not exist.")
+        raise Exception("ERROR: image path does not exist.")
+
     rotation = rotationFromExifTag(imgPath)
     if boThrowErrorIfExifRotationTagSet and rotation != 0:
         print("Error: exif roation tag set, image needs to be rotated by %d degrees." % rotation)
     img = cv2.imread(imgPath)
     if img is None:
-        raise print("ERROR: cannot load image " + imgPath)
-
+        print("ERROR: cannot load image " + imgPath)
+        raise Exception("ERROR: cannot load image " + imgPath)
     if rotation != 0:
-        # clone_img = Image.fromarray(img).rotate(-90, expand=True, resample=Image.BILINEAR)
         rows, cols, _ = img.shape
         M = cv2.getRotationMatrix2D((cols / 2, rows / 2), -90, 1)
         clone_img = cv2.warpAffine(img, M, (cols, rows))
@@ -727,7 +726,7 @@ def rotationFromExifTag(imgPath):
 
     # rotate the image if orientation exif tag is present
     rotation = 0
-    if imageExifTags is not None and orientationExifId is not None and orientationExifId in imageExifTags:
+    if imageExifTags != None and orientationExifId != None and orientationExifId in imageExifTags:
         orientation = imageExifTags[orientationExifId]
         # print ("orientation = " + str(imageExifTags[orientationExifId]))
         if orientation == 1 or orientation == 0:
@@ -737,6 +736,7 @@ def rotationFromExifTag(imgPath):
         elif orientation == 8:
             rotation = 90
         else:
+            print("ERROR: orientation = " + str(orientation) + " not_supported!")
             raise Exception("ERROR: orientation = " + str(orientation) + " not_supported!")
     return rotation
 
@@ -758,29 +758,30 @@ def imresizeMaxDim(img, maxDim, boUpscale=False, interpolation=cv2.INTER_LINEAR)
     return img, scale
 
 
-def imWidth(input_img):
-    return imWidthHeight(input_img)[0]
+def imWidth(input):
+    return imWidthHeight(input)[0]
 
 
-def imHeight(input_img):
-    return imWidthHeight(input_img)[1]
+def imHeight(input):
+    return imWidthHeight(input)[1]
 
 
-def imWidthHeight(input_img):
-    width, height = Image.open(input_img).size  # this does not load the full image
+def imWidthHeight(input):
+    width, height = Image.open(input).size  # this does not load the full image
     return width, height
 
 
-def imArrayWidth(input_img):
-    return imArrayWidthHeight(input_img)[0]
+def imArrayWidth(input):
+    return imArrayWidthHeight(input)[0]
 
 
-def imArrayHeight(input_img):
-    return imArrayWidthHeight(input_img)[1]
+def imArrayHeight(input):
+    return imArrayWidthHeight(input)[1]
 
 
-def imArrayWidthHeight(input_img):
-    width, height = input_img.shape
+def imArrayWidthHeight(input):
+    width = input.shape[1]
+    height = input.shape[0]
     return width, height
 
 
@@ -842,7 +843,7 @@ def pilDrawText(pilImg, pt, text, textWidth=None, color=(255, 255, 255), colorBa
         lines = textwrap.wrap(text, width=textWidth)
     for line in lines:
         width, height = font.getsize(line)
-        if colorBackground != None:
+        if colorBackground is not None:
             draw.rectangle((pt[0], pt[1], pt[0] + width, pt[1] + height), fill=tuple(colorBackground[::-1]))
         draw.text(pt, line, fill=tuple(color), font=font)
         textY += height
@@ -994,12 +995,12 @@ def bboxComputeOverlapVoc(bbox1, bbox2):
     surfaceRect1 = bbox1.surfaceArea()
     surfaceRect2 = bbox2.surfaceArea()
     overlapBbox = bbox1.getOverlapBbox(bbox2)
-    if overlapBbox is None:
+    if overlapBbox == None:
         return 0
     else:
         surfaceOverlap = overlapBbox.surfaceArea()
         overlap = max(0, 1.0 * surfaceOverlap / (surfaceRect1 + surfaceRect2 - surfaceOverlap))
-        assert (0 <= overlap <= 1)
+        assert (overlap >= 0 and overlap <= 1)
         return overlap
 
 
