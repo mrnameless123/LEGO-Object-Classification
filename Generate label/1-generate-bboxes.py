@@ -7,7 +7,7 @@ from cntk_helpers import *
 ####################################
 # Parameters
 ####################################
-imgDir = "D:/vision/test-generate-labels/"
+imgDir = "C:/Users/Minh-ICRL/Documents/LEGO-Object-Classification/DataSets/Grocery/testImages"
 
 # no need to change these params
 drawingImgSize = 1000.0

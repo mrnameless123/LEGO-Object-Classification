@@ -90,7 +90,7 @@ class imdb_data(fastRCNN.imdb):
                 if sys.version_info[0] < 3: 
                     roidb = cp.load(fid)
                 else: 
-                    roidb = cp.load(fid, encoding='latin1')
+                    roidb = cp.load(fid, encoding='utf-8')
             print ('{} ss roidb loaded from {}'.format(self.name, cache_file))
             return roidb
 
@@ -160,9 +160,18 @@ class imdb_data(fastRCNN.imdb):
         boxes = np.zeros((num_objs,4), dtype=np.uint16)
         gt_classes = np.zeros(num_objs, dtype=np.int32)
         overlaps = np.zeros((num_objs, self.num_classes), dtype=np.float32)
+        # test = label.decode('utf-8')
         for bboxIndex,(bbox,label) in enumerate(zip(bboxes,labels)):
-            cls = self._class_to_ind[label.decode('utf-8')]
-            boxes[bboxIndex, :] = bbox
+            try:
+                tmp = label.decode(encoding="utf-8", errors='ignore')
+                print('Decode result: ', tmp)
+                cls = self._class_to_ind[tmp]
+            except Exception as argument:
+                print('Decode problem: ', argument)
+                input()
+            else:
+            # cls = self._class_to_ind[[x.decode('utf-8') for x in label]]
+                boxes[bboxIndex, :] = bbox
             gt_classes[bboxIndex] = cls
             overlaps[bboxIndex, cls] = 1.0
 

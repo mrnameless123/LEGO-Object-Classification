@@ -12,9 +12,13 @@ from cntk_helpers import *
 ####################################
 # Parameters
 ####################################
-imgDir = "D:/vision/test-generate-labels/"
-classes = ("lego 1", "lego 2", "lego 3", "lego 4", 'lego 5', 'lego 6')
-
+# imgDir = "D:/vision/test-generate-labels/"
+# classes = ("lego 1", "lego 2", "lego 3", "lego 4", 'lego 5', 'lego 6')
+imgDir = "C:/Users/Minh-ICRL/Documents/LEGO-Object-Classification/DataSets/Grocery/testImages"
+# classes = ('apple',"avocado", "orange", "butter", "champagne", "cheese", "eggBox", "gerkin", "joghurt", "ketchup",
+#            "orangeJuice", "onion", "pepper", "sausage", "tomato", "water", "milk",
+#            "tabasco", "soySauce", "mustard", "beer")
+classes = ('apple','banana', 'orange')
 #no need to change these
 drawingImgSize = 1000
 boxWidth = 10

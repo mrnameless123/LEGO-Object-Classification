@@ -482,6 +482,7 @@ def applyNonMaximaSuppression(nmsThreshold, labels, scores, coords):
 
     # map back to original roi indices
     nmsKeepIndices = []
+
     for i in range(max(labels) + 1):
         for keepIndex in nmsKeepIndicesList[i][0]:
             nmsKeepIndices.append(allIndices[i][keepIndex])  # for keepIndex in nmsKeepIndicesList[i][0]]
