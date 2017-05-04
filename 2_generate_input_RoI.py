@@ -2,7 +2,7 @@ from __future__ import print_function
 from builtins import input
 import os, sys, importlib
 import shutil, time
-import param
+# from param import *
 locals().update(importlib.import_module("param").__dict__)
 
 

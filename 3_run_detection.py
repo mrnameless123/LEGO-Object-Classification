@@ -20,8 +20,6 @@ import os, sys
 ###############################################################
 ###############################################################
 abs_path = os.path.dirname(os.path.abspath(__file__))
-
-
 sys.path.append(os.path.join(abs_path, "..", ".."))
 
 # file and stream names
@@ -79,7 +77,7 @@ def create_mb_source(img_height, img_width, img_channels, n_classes, n_rois, dat
 
     if not os.path.exists(map_file) or not os.path.exists(roi_file) or not os.path.exists(label_file):
         raise RuntimeError("File '%s', '%s' or '%s' does not exist. "
-                           "Please run install_fastrcnn.py from Examples/Image/Detection/FastRCNN to fetch them" %
+                           "Please run install_fastrcnn.py from to fetch them" %
                            (map_file, roi_file, label_file))
 
     # read images
@@ -210,8 +208,9 @@ def test_fast_rcnn(model):
 # The main method trains and evaluates a Fast R-CNN model.
 # If a trained model is already available it is loaded an no training will be performed.
 if __name__ == '__main__':
+    file_name = 'frcn_py_{0}.model'.format(cntk_nrRois)
     os.chdir(base_path)
-    model_path = os.path.join(abs_path, "Output", "frcn_py.model")
+    model_path = os.path.join(abs_path, "Output", file_name)
 
     # Train only is no model exists yet
     if os.path.exists(model_path):

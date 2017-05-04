@@ -731,6 +731,8 @@ def rotationFromExifTag(imgPath):
         # print ("orientation = " + str(imageExifTags[orientationExifId]))
         if orientation == 1 or orientation == 0:
             rotation = 0  # no need to do anything
+        elif orientation == 3:
+            rotation = 0
         elif orientation == 6:
             rotation = -90
         elif orientation == 8:
