@@ -4,7 +4,7 @@ import scipy.sparse
 import pickle as cp
 import numpy as np
 import fastRCNN
-import os, sys
+import os, sys, codecs
 import cntk_helpers
 class imdb_data(fastRCNN.imdb):
     def __init__(self, image_set, classes, maxNrRois, imgDir, roiDir, cacheDir, boAddGroundTruthRois):
@@ -162,16 +162,14 @@ class imdb_data(fastRCNN.imdb):
         overlaps = np.zeros((num_objs, self.num_classes), dtype=np.float32)
         # test = label.decode('utf-8')
         for bboxIndex,(bbox,label) in enumerate(zip(bboxes,labels)):
-            try:
-                tmp = label.decode(encoding="utf-8", errors='ignore')
-                print('Decode result: ', tmp)
-                cls = self._class_to_ind[tmp]
-            except Exception as argument:
-                print('Decode problem: ', argument)
-                input()
+            if isinstance(label, str):
+                print('True')
             else:
-            # cls = self._class_to_ind[[x.decode('utf-8') for x in label]]
-                boxes[bboxIndex, :] = bbox
+                type(label)
+            convertToStr = label.decode("utf-8")
+            cls = self._class_to_ind[convertToStr]
+            print('No problem anymore')
+            boxes[bboxIndex, :] = bbox
             gt_classes[bboxIndex] = cls
             overlaps[bboxIndex, cls] = 1.0
 

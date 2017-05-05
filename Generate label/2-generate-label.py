@@ -14,11 +14,11 @@ from cntk_helpers import *
 ####################################
 # imgDir = "D:/vision/test-generate-labels/"
 # classes = ("lego 1", "lego 2", "lego 3", "lego 4", 'lego 5', 'lego 6')
-imgDir = "C:/Users/Minh-ICRL/Documents/LEGO-Object-Classification/DataSets/Grocery/testImages"
+imgDir = "C:/Users/Minh-ICRL/Documents/LEGO-Object-Classification/DataSets/Grocery/positive"
 # classes = ('apple',"avocado", "orange", "butter", "champagne", "cheese", "eggBox", "gerkin", "joghurt", "ketchup",
 #            "orangeJuice", "onion", "pepper", "sausage", "tomato", "water", "milk",
 #            "tabasco", "soySauce", "mustard", "beer")
-classes = ('apple','banana', 'orange')
+classes = ('__background__',"apple","banana", "orange")
 #no need to change these
 drawingImgSize = 1000
 boxWidth = 10
@@ -34,7 +34,8 @@ def buttonPressedCallback(s):
     global_lastButtonPressed = s
 
 # create UI
-objectNames = np.sort(classes).tolist()
+objectNames = classes[1:]
+objectNames = np.sort(objectNames).tolist()
 objectNames += ["UNDECIDED", "EXCLUDE"]
 tk = Tk()
 w = Canvas(tk, width=len(objectNames) * boxWidth, height=len(objectNames) * boxHeight, bd = boxWidth, bg = 'white')
@@ -81,6 +82,6 @@ for imgIndex, imgFilename in enumerate(imgFilenames):
         print ("Button pressed = ", global_lastButtonPressed)
         labels.append(global_lastButtonPressed)
 
-    writeFile(labelsPath, labels)
+    writeFile(labelsPath, str(labels,'utf-8'))
 tk.destroy()
 print ("DONE.")

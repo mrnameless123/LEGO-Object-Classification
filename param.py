@@ -63,7 +63,7 @@ cntk_momentum_time_constant = -1    # set per data set below
 if datasetName.startswith("Grocery"):
     classes = ('__background__',  # always index 0
                'avocado', 'orange', 'butter', 'champagne', 'eggBox', 'gerkin', 'joghurt', 'ketchup',
-               'orangeJuice', 'onion', 'pepper', 'tomato', 'water', 'milk', 'tabasco', 'mustard')
+               'orangeJuice', 'onion', 'pepper', 'tomato', 'water', 'milk', 'tabasco', 'mustard', 'banana', 'apple')
 
     # roi generation
     roi_minDimRel = 0.04
