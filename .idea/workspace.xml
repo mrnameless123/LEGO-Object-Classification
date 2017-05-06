@@ -2,34 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c12a8bc5-8139-4176-abc7-3920b81577d2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110053.bboxes.labels.tsv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110734.bboxes.labels.tsv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110818.bboxes.labels.tsv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataSets/Grocery/testImages/z20170430_110053.bboxes.labels.tsv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataSets/Grocery/testImages/z20170430_110734.bboxes.labels.tsv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataSets/Grocery/testImages/z20170430_110818.bboxes.labels.tsv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.cache_gt_roidb.pkl" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.cache_gt_roidb.pkl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.cache_selective_search_roidb.pkl" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.cache_selective_search_roidb.pkl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/0.dat.npz" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/0.dat.npz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/1.dat.npz" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/1.dat.npz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/2.dat.npz" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/2.dat.npz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.cache_gt_roidb.pkl" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.cache_gt_roidb.pkl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.cache_selective_search_roidb.pkl" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.cache_selective_search_roidb.pkl" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.cache_gt_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.cache_selective_search_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.nrRois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.roilabels.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.rois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.z" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/0.dat.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/1.dat.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/2.dat.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.cache_gt_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.cache_selective_search_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.nrRois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.roilabels.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.rois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/1.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/2.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/3.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/4.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/5.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170417_142318.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170417_142359.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110046.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110731.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110830.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110907.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110908.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110913.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110053.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110734.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110818.roi.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataSets/Grocery/positive/20170417_142318.bboxes.labels.tsv" afterPath="$PROJECT_DIR$/DataSets/Grocery/positive/20170417_142318.bboxes.labels.tsv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataSets/Grocery/positive/20170417_142359.bboxes.labels.tsv" afterPath="$PROJECT_DIR$/DataSets/Grocery/positive/20170417_142359.bboxes.labels.tsv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110046.bboxes.labels.tsv" afterPath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110046.bboxes.labels.tsv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110731.bboxes.labels.tsv" afterPath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110731.bboxes.labels.tsv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110830.bboxes.labels.tsv" afterPath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110830.bboxes.labels.tsv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110907.bboxes.labels.tsv" afterPath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110907.bboxes.labels.tsv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110908.bboxes.labels.tsv" afterPath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110908.bboxes.labels.tsv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110913.bboxes.labels.tsv" afterPath="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110913.bboxes.labels.tsv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" afterPath="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Generate label/2-generate-label.py" afterPath="$PROJECT_DIR$/Generate label/2-generate-label.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imdb_data.py" afterPath="$PROJECT_DIR$/imdb_data.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/param.py" afterPath="$PROJECT_DIR$/param.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.roilabels.txt" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.roilabels.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.z" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.z" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.roilabels.txt" afterPath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.roilabels.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,22 +49,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="imdb_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imdb_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="5_evaluate_input.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5_evaluate_input.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="264">
               <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -65,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="6_visualize_output.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="6_visualize_output.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/6_visualize_output.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="220">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -80,30 +76,8 @@
       <file leaf-file-name="imdb.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fastRCNN/imdb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="616">
               <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2_generate_input_RoI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2_generate_input_RoI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="3_run_detection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3_run_detection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,8 +86,8 @@
       <file leaf-file-name="param.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/param.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="65" column="106" lean-forward="false" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
+            <state relative-caret-position="271">
+              <caret line="116" column="16" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="16" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -121,24 +95,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="4_evaluate_output.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4_evaluate_output.py">
+      <file leaf-file-name="2_generate_input_RoI.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2_generate_input_RoI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state relative-caret-position="198">
+              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3_run_detection.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/3_run_detection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-660">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1_install_fastrcnn.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_install_fastrcnn.py">
+      <file leaf-file-name="1-generate-bboxes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Generate label/1-generate-bboxes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataSets/Grocery/test.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataSets/Grocery/train.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,8 +152,8 @@
       <file leaf-file-name="cntk_helpers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cntk_helpers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="50" selection-end-line="236" selection-end-column="50" />
+            <state relative-caret-position="1083">
+              <caret line="222" column="38" lean-forward="false" selection-start-line="222" selection-start-column="38" selection-end-line="222" selection-end-column="38" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -180,7 +186,6 @@
       <find>rotate</find>
       <find>orientation</find>
       <find>subDirs</find>
-      <find>image_sets</find>
       <find>applyNonMaximaSuppression</find>
       <find>encod</find>
       <find>selective_search_roidb</find>
@@ -191,6 +196,8 @@
       <find>utf-8</find>
       <find>classes</find>
       <find>_class_to_ind</find>
+      <find>write</find>
+      <find>image_sets</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,7 +225,6 @@
         <option value="$PROJECT_DIR$/DataSets/Grocery/test.txt" />
         <option value="$PROJECT_DIR$/5_evaluate_input.py" />
         <option value="$PROJECT_DIR$/cntk_helpers.py" />
-        <option value="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" />
         <option value="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170417_142318.roi.txt" />
         <option value="$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110053.roi.txt" />
         <option value="$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110908.bboxes.labels.tsv" />
@@ -230,9 +236,10 @@
         <option value="$PROJECT_DIR$/DataSets/Grocery/positive/20170417_142359.bboxes.labels.tsv" />
         <option value="$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110907.bboxes.labels.tsv" />
         <option value="$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110046.bboxes.labels.tsv" />
-        <option value="$PROJECT_DIR$/Generate label/2-generate-label.py" />
         <option value="$PROJECT_DIR$/imdb_data.py" />
+        <option value="$PROJECT_DIR$/Generate label/2-generate-label.py" />
         <option value="$PROJECT_DIR$/param.py" />
+        <option value="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" />
       </list>
     </option>
   </component>
@@ -279,6 +286,142 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="proc">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Lego_150">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="rois">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="proc">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Lego_150">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cntkFiles">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Images">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="DataSets">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="DataSets">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Lego">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="DataSets">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Grocery">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="base_directory">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -420,120 +563,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="proc">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Grocery_150">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="proc">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Grocery_150">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="cntkFiles">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Generate label">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="DataSets">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="DataSets">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Grocery">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="base_directory">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -552,61 +581,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.6_visualize_output">
-    <configuration default="false" name="2_generate_input_RoI" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LEGO-Object-Classification" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2_generate_input_RoI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="3_run_detection" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LEGO-Object-Classification" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3_run_detection.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="4_evaluate_output" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LEGO-Object-Classification" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4_evaluate_output.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.2_generate_input_RoI">
     <configuration default="false" name="5_evaluate_input" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -638,6 +613,60 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LEGO-Object-Classification" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6_visualize_output.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="1-generate-bboxes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Generate label" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LEGO-Object-Classification" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="2-generate-label" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Generate label" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LEGO-Object-Classification" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate label/2-generate-label.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="2_generate_input_RoI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LEGO-Object-Classification" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2_generate_input_RoI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -724,19 +753,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.2_generate_input_RoI" />
-      <item index="1" class="java.lang.String" itemvalue="Python.3_run_detection" />
-      <item index="2" class="java.lang.String" itemvalue="Python.4_evaluate_output" />
-      <item index="3" class="java.lang.String" itemvalue="Python.5_evaluate_input" />
-      <item index="4" class="java.lang.String" itemvalue="Python.6_visualize_output" />
+      <item index="0" class="java.lang.String" itemvalue="Python.5_evaluate_input" />
+      <item index="1" class="java.lang.String" itemvalue="Python.6_visualize_output" />
+      <item index="2" class="java.lang.String" itemvalue="Python.1-generate-bboxes" />
+      <item index="3" class="java.lang.String" itemvalue="Python.2-generate-label" />
+      <item index="4" class="java.lang.String" itemvalue="Python.2_generate_input_RoI" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.6_visualize_output" />
-        <item index="1" class="java.lang.String" itemvalue="Python.5_evaluate_input" />
-        <item index="2" class="java.lang.String" itemvalue="Python.4_evaluate_output" />
-        <item index="3" class="java.lang.String" itemvalue="Python.3_run_detection" />
-        <item index="4" class="java.lang.String" itemvalue="Python.2_generate_input_RoI" />
+        <item index="0" class="java.lang.String" itemvalue="Python.2_generate_input_RoI" />
+        <item index="1" class="java.lang.String" itemvalue="Python.1-generate-bboxes" />
+        <item index="2" class="java.lang.String" itemvalue="Python.2-generate-label" />
+        <item index="3" class="java.lang.String" itemvalue="Python.6_visualize_output" />
+        <item index="4" class="java.lang.String" itemvalue="Python.5_evaluate_input" />
       </list>
     </recent_temporary>
   </component>
@@ -755,9 +784,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23482428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23908414" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814237" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37708566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -790,17 +818,17 @@
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/3_run_detection.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/imdb_data.py</url>
           <line>70</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Generate label/1-generate-bboxes.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="32" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -829,13 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Generate label/1-generate-bboxes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="93" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="93" />
         </state>
       </provider>
     </entry>
@@ -871,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="307" column="40" lean-forward="false" selection-start-line="307" selection-start-column="40" selection-end-line="307" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,25 +967,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110046.bboxes.labels.tsv" />
-    <entry file="file://$PROJECT_DIR$/DataSets/Grocery/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataSets/Grocery/train.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/cntk/logging/progress_print.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1144">
           <caret line="56" column="8" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,7 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,15 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Generate label/2-generate-label.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="84" column="36" lean-forward="false" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,13 +997,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5940">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imdb_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state relative-caret-position="396">
           <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
@@ -1018,29 +1012,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fastRCNN/imdb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="616">
           <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/param.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="65" column="106" lean-forward="false" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cntk_helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="50" selection-end-line="236" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,35 +1028,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2_generate_input_RoI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3_run_detection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/4_evaluate_output.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/5_evaluate_input.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="264">
           <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
@@ -1092,11 +1048,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/6_visualize_output.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="220">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataSets/Grocery/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataSets/Grocery/train.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Generate label/2-generate-label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="85" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/param.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="116" column="16" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cntk_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="222" column="38" lean-forward="false" selection-start-line="222" selection-start-column="38" selection-end-line="222" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Generate label/1-generate-bboxes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_generate_input_RoI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3_run_detection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

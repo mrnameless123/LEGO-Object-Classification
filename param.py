@@ -6,8 +6,8 @@ import fastRCNN, time, datetime
 print (datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'))
 
 # dataset name
-datasetName = "Grocery"
-# datasetName = "LEGO"
+# datasetName = "Grocery"
+datasetName = "Lego"
 # datasetName = "pascalVoc"
 # datasetName = "pascalVoc_aeroplanesOnly"
 
@@ -114,8 +114,33 @@ elif datasetName.startswith("pascalVoc"):
         imdbs[image_set] = fastRCNN.pascal_voc(lutImageSet[image_set], year, classes, cntk_nrRois, cacheDir = cntkFilesDir, devkit_path=pascalDataDir)
         print ("Number of {} images: {}".format(image_set, imdbs[image_set].num_images))
 
+elif datasetName.startswith("Lego"):
+    classes = ('__background__', 'type 1',"type 2", "type 3", 'type 4', 'type 5', 'type 6')
+
+    # roi generation
+    roi_minDimRel = 0.04
+    roi_maxDimRel = 0.4
+    roi_minNrPixelsRel = 2 * roi_minDimRel * roi_minDimRel
+    roi_maxNrPixelsRel = 0.33 * roi_maxDimRel * roi_maxDimRel
+
+    # model training / scoring
+    classifier = 'nn'
+    cntk_num_train_images = 296
+    cntk_num_test_images = 21
+    cntk_mb_size = 5
+    cntk_max_epochs = 20
+    cntk_momentum_time_constant = 10
+
+    # postprocessing
+    nmsThreshold = 0.01
+
+    # database
+    imdbs = dict()  # database provider of images and image annotations
+    for image_set in ["train", "test"]:
+        imdbs[image_set] = imdb_data(image_set, classes, cntk_nrRois, imgDir, roiDir, cntkFilesDir,
+                                     boAddGroundTruthRois=(image_set != 'test'))
 else:
-     raise Exception('Only support Groceries and pascalVoc')
+    raise Exception('Only support Groceries and pascalVoc')
 
 
 ############################

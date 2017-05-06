@@ -7,7 +7,7 @@ from cntk_helpers import *
 ####################################
 # Parameters
 ####################################
-imgDir = "C:/Users/Minh-ICRL/Documents/LEGO-Object-Classification/DataSets/Grocery/testImages"
+imgDir = "C:/Users/Minh-ICRL/Documents/LEGO-Object-Classification/DataSets/Lego/testImages"
 
 # no need to change these params
 drawingImgSize = 1000.0
@@ -64,6 +64,9 @@ def scaleCropBboxes(rectsIn, scaleFactor, imgWidth, imgHeight):
 # Main
 ####################################
 imgFilenames = [f for f in os.listdir(imgDir) if f.lower().endswith(".jpg")]
+with open('mytrain2.txt', 'w') as listFile:
+    for fileindex, tmpImage in enumerate(imgFilenames):
+            listFile.write('{0}\t testImages/{1}\n'.format(fileindex, tmpImage))
 
 # loop over each image and get annotation
 for imgFilenameIndex,imgFilename in enumerate(imgFilenames):

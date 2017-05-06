@@ -14,11 +14,11 @@ from cntk_helpers import *
 ####################################
 # imgDir = "D:/vision/test-generate-labels/"
 # classes = ("lego 1", "lego 2", "lego 3", "lego 4", 'lego 5', 'lego 6')
-imgDir = "C:/Users/Minh-ICRL/Documents/LEGO-Object-Classification/DataSets/Grocery/positive"
+imgDir = "C:/Users/Minh-ICRL/Documents/LEGO-Object-Classification/DataSets/Lego/testImages"
 # classes = ('apple',"avocado", "orange", "butter", "champagne", "cheese", "eggBox", "gerkin", "joghurt", "ketchup",
 #            "orangeJuice", "onion", "pepper", "sausage", "tomato", "water", "milk",
 #            "tabasco", "soySauce", "mustard", "beer")
-classes = ('__background__',"apple","banana", "orange")
+classes = ('__background__',"type 1","type 2", "type 3", 'type 4', 'type 5', 'type 6')
 #no need to change these
 drawingImgSize = 1000
 boxWidth = 10
@@ -82,6 +82,6 @@ for imgIndex, imgFilename in enumerate(imgFilenames):
         print ("Button pressed = ", global_lastButtonPressed)
         labels.append(global_lastButtonPressed)
 
-    writeFile(labelsPath, str(labels,'utf-8'))
+    writeFile(labelsPath, labels)
 tk.destroy()
 print ("DONE.")
