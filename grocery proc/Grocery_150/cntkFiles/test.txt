@@ -1,3 +1,0 @@
-0	C:\Users\Minh-ICRL\Documents\LEGO-Object-Classification/./DataSets/Grocery/testImages\20170430_110053.jpg	0
-1	C:\Users\Minh-ICRL\Documents\LEGO-Object-Classification/./DataSets/Grocery/testImages\20170430_110734.jpg	0
-2	C:\Users\Minh-ICRL\Documents\LEGO-Object-Classification/./DataSets/Grocery/testImages\20170430_110818.jpg	0

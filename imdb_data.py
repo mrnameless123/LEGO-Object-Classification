@@ -298,6 +298,10 @@ class imdb_data(fastRCNN.imdb):
         fp = np.cumsum(fp)
         tp = np.cumsum(tp)
         rec = tp / float(npos)
+        # with np.errstate(divide = 'ignore', invalid = 'ignore'):
+        #     rec = np.true_divide(tp , float(npos))
+        #     rec[rec == np.inf] = 0
+        #     rec = np.nan_to_num(rec)
         # avoid divide by zero in case the first detection matches a difficult
         # ground truth
         prec = tp / np.maximum(tp + fp, np.finfo(np.float64).eps)

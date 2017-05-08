@@ -2,41 +2,375 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c12a8bc5-8139-4176-abc7-3920b81577d2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.cache_gt_roidb.pkl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.cache_selective_search_roidb.pkl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.nrRois.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.roilabels.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.rois.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.z" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/0.dat.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/1.dat.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test_parsed/2.dat.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.cache_gt_roidb.pkl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.cache_selective_search_roidb.pkl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.nrRois.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.roilabels.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.rois.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/1.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/2.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/3.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/4.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/negative/5.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170417_142318.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170417_142359.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110046.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110731.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110830.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110907.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110908.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170430_110913.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110053.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110734.roi.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110818.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test.cache_gt_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test.cache_selective_search_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test.nrRois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test.roilabels.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test.rois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test.z" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test_parsed/0.dat.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test_parsed/1.dat.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/test_parsed/2.dat.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/train.cache_gt_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/train.cache_selective_search_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/train.nrRois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/train.roilabels.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/train.rois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/cntkFiles/train.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/negative/1.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/negative/2.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/negative/3.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/negative/4.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/negative/5.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/positive/20170417_142318.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/positive/20170417_142359.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/positive/20170430_110046.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/positive/20170430_110731.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/positive/20170430_110830.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/positive/20170430_110907.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/positive/20170430_110908.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/positive/20170430_110913.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/testImages/20170430_110053.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/testImages/20170430_110734.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/grocery proc/Grocery_150/rois/testImages/20170430_110818.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/test.cache_gt_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/test.cache_selective_search_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/test.nrRois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/test.roilabels.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/test.rois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/train.cache_gt_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/train.cache_selective_search_roidb.pkl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/train.nrRois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/train.roilabels.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/train.rois.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/cntkFiles/train.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/negative/1.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/negative/2.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/negative/3.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/negative/4.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/negative/5.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004156.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004158.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004159(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004159.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004200(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004200.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004201(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004201.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004202.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004203.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004205.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004206(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004206.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004207(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004207.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004208.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004229(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004229.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004230(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004230.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004231.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004801.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004803.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004804(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004804.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004805.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004806(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004806.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004807(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004807.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004808(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004808.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004809.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004810(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004810.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004811.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004812(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004812.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004813.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004814(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004814.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004815.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004816.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004817(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004817.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004818.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004819(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004819.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004830.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004831.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004832(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004832.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004833.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004834(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004834.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004835(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004835.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004836.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004837(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004837.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004838.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004839.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004840(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_004840.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005522.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005524.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005525(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005525.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005526(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005526.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005527.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005528.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005529(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005529.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005530.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005531(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005531.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005532(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005532.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005533(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005533.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005534.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005535(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005535.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005536(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005536.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005537(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005537.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005538(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005538.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005539.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005540(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005540.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005541.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005542.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005547(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005547.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005548.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005549(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005549.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005550.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005551(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005551.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005552.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005553(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005553.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005554.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005555(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005555.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005556.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005557(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005557.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005558.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005559(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005559.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005600.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005601(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005601.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005603(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_005603.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010047.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010048.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010049(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010049.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010050(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010050.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010051.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010052.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010053(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010053.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010054.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010055.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010056(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010056.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010057(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010057.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010058.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010059(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010059.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010100(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010100.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010101.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010103.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010106.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010115(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010115.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010116.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010117(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010117.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010118.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010119(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010119.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010120.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010121(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010121.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010122.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010123(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010123.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010124.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010125(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010125.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010126.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010127(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010127.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010128.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010129(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010129.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010524.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010525.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010526(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010526.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010527(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010527.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010528.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010529(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010529.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010530.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010531(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010531.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010532(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010532.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010533(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010533.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010534.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010535(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010535.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010536(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010536.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010537(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010537.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010538.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010539(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010539.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010540(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010540.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010545(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010545.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010546.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010547(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010547.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010548.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010549.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010551.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010552.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010553(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010553.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010554.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010555(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010555.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010556.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010557(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010557.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010558.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010559.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010600(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010600.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010601.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010602.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010603.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010604.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010955.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010956(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010956.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010957.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010958.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_010959.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011000(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011000.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011001(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011001.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011002(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011002.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011003(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011003.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011004.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011005(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011005.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011006(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011006.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011007(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011007.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011008.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011009(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011009.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011010(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011010.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011011(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011011.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011012(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011012.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011013(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011013.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011014(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011014.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011015.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011016(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011016.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011017.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011018.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011019(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011019.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011020.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011021(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011021.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011022.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011023.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011024.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011025.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011026.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011027.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011032.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011033(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011033.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011034.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011035(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011035.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011036.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011037.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011038(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011038.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011039.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011040(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011040.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011041.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011042(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011042.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011043.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011044.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011045.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011046(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011046.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011047.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011048.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011049.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011050.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/positive/20170501_011051.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170422_013737.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170422_013748.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170422_013800.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170422_013820.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011945.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011946.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011947(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011947.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011949.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011950.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011951.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011952(1).roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_011952.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_012026.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_012027.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_012028.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_012048.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_012049.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_012050.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_012051.roi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proc/Lego_150/rois/testImages/20170501_012052.roi.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" afterPath="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Generate label/2-generate-label.py" afterPath="$PROJECT_DIR$/Generate label/2-generate-label.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1_install_fastrcnn.py" afterPath="$PROJECT_DIR$/1_install_fastrcnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imdb_data.py" afterPath="$PROJECT_DIR$/imdb_data.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/param.py" afterPath="$PROJECT_DIR$/param.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,8 +386,8 @@
       <file leaf-file-name="5_evaluate_input.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5_evaluate_input.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -61,11 +395,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="6_visualize_output.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="6_visualize_output.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/6_visualize_output.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="286">
+              <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -73,12 +407,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imdb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fastRCNN/imdb.py">
+      <file leaf-file-name="imdb_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imdb_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="299" column="30" lean-forward="false" selection-start-line="299" selection-start-column="30" selection-end-line="299" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,8 +422,8 @@
       <file leaf-file-name="param.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/param.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="116" column="16" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="16" />
+            <state relative-caret-position="168">
+              <caret line="130" column="24" lean-forward="false" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="24" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -98,8 +434,8 @@
       <file leaf-file-name="2_generate_input_RoI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2_generate_input_RoI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="-1650">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -107,53 +443,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3_run_detection.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="3_run_detection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3_run_detection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-660">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1-generate-bboxes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Generate label/1-generate-bboxes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="-1381">
+              <caret line="48" column="27" lean-forward="false" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
               <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#237#274#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataSets/Grocery/test.txt">
+      <file leaf-file-name="4_evaluate_output.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/4_evaluate_output.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataSets/Grocery/train.txt">
+      <file leaf-file-name="1_install_fastrcnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/1_install_fastrcnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cntk_helpers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cntk_helpers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1083">
-              <caret line="222" column="38" lean-forward="false" selection-start-line="222" selection-start-column="38" selection-end-line="222" selection-end-column="38" />
+            <state relative-caret-position="220">
+              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="21" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -198,6 +514,7 @@
       <find>_class_to_ind</find>
       <find>write</find>
       <find>image_sets</find>
+      <find>process</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -216,7 +533,6 @@
         <option value="$PROJECT_DIR$/4_evaluate_output.py" />
         <option value="$PROJECT_DIR$/3_run_detection.py" />
         <option value="$PROJECT_DIR$/2_generate_input_RoI.py" />
-        <option value="$PROJECT_DIR$/1_install_fastrcnn.py" />
         <option value="$PROJECT_DIR$/selectivesearch/5_visualize_input.py" />
         <option value="$PROJECT_DIR$/5_visualize_input_RoI.py" />
         <option value="$PROJECT_DIR$/5_evaluate_output.py" />
@@ -236,10 +552,11 @@
         <option value="$PROJECT_DIR$/DataSets/Grocery/positive/20170417_142359.bboxes.labels.tsv" />
         <option value="$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110907.bboxes.labels.tsv" />
         <option value="$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110046.bboxes.labels.tsv" />
-        <option value="$PROJECT_DIR$/imdb_data.py" />
         <option value="$PROJECT_DIR$/Generate label/2-generate-label.py" />
-        <option value="$PROJECT_DIR$/param.py" />
         <option value="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" />
+        <option value="$PROJECT_DIR$/1_install_fastrcnn.py" />
+        <option value="$PROJECT_DIR$/param.py" />
+        <option value="$PROJECT_DIR$/imdb_data.py" />
       </list>
     </option>
   </component>
@@ -298,130 +615,9 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="proc">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Lego_150">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="rois">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="proc">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Lego_150">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="cntkFiles">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Images">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="DataSets">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="DataSets">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Lego">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="DataSets">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Grocery">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LEGO-Object-Classification">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="base_directory">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -562,12 +758,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/Python-Self-Taught/Official-IFCM" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -581,7 +776,61 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.2_generate_input_RoI">
+  <component name="RunManager" selected="Python.6_visualize_output">
+    <configuration default="false" name="2_generate_input_RoI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LEGO-Object-Classification" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2_generate_input_RoI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="3_run_detection" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LEGO-Object-Classification" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3_run_detection.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="4_evaluate_output" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LEGO-Object-Classification" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4_evaluate_output.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
     <configuration default="false" name="5_evaluate_input" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -613,60 +862,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LEGO-Object-Classification" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/6_visualize_output.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="1-generate-bboxes" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Generate label" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LEGO-Object-Classification" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate label/1-generate-bboxes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="2-generate-label" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Generate label" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LEGO-Object-Classification" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate label/2-generate-label.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="2_generate_input_RoI" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LEGO-Object-Classification" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2_generate_input_RoI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -753,19 +948,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.5_evaluate_input" />
-      <item index="1" class="java.lang.String" itemvalue="Python.6_visualize_output" />
-      <item index="2" class="java.lang.String" itemvalue="Python.1-generate-bboxes" />
-      <item index="3" class="java.lang.String" itemvalue="Python.2-generate-label" />
-      <item index="4" class="java.lang.String" itemvalue="Python.2_generate_input_RoI" />
+      <item index="0" class="java.lang.String" itemvalue="Python.2_generate_input_RoI" />
+      <item index="1" class="java.lang.String" itemvalue="Python.3_run_detection" />
+      <item index="2" class="java.lang.String" itemvalue="Python.4_evaluate_output" />
+      <item index="3" class="java.lang.String" itemvalue="Python.5_evaluate_input" />
+      <item index="4" class="java.lang.String" itemvalue="Python.6_visualize_output" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.2_generate_input_RoI" />
-        <item index="1" class="java.lang.String" itemvalue="Python.1-generate-bboxes" />
-        <item index="2" class="java.lang.String" itemvalue="Python.2-generate-label" />
-        <item index="3" class="java.lang.String" itemvalue="Python.6_visualize_output" />
-        <item index="4" class="java.lang.String" itemvalue="Python.5_evaluate_input" />
+        <item index="0" class="java.lang.String" itemvalue="Python.6_visualize_output" />
+        <item index="1" class="java.lang.String" itemvalue="Python.4_evaluate_output" />
+        <item index="2" class="java.lang.String" itemvalue="Python.5_evaluate_input" />
+        <item index="3" class="java.lang.String" itemvalue="Python.3_run_detection" />
+        <item index="4" class="java.lang.String" itemvalue="Python.2_generate_input_RoI" />
       </list>
     </recent_temporary>
   </component>
@@ -784,11 +979,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23908414" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24174654" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814237" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37708566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37708566" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37708566" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -813,11 +1009,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/3_run_detection.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/imdb_data.py</url>
           <line>70</line>
           <option name="timeStamp" value="28" />
@@ -833,21 +1024,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataSets/Grocery/positive/WIN_20160803_11_30_57_Pro.bboxes.labels.tsv" />
-    <entry file="file://$PROJECT_DIR$/DataSets/Grocery/positive/WIN_20160803_11_31_30_Pro.bboxes.labels.tsv" />
     <entry file="file://$PROJECT_DIR$/DataSets/Grocery/positive/WIN_20160803_11_30_07_Pro.bboxes.labels.tsv" />
     <entry file="file://$PROJECT_DIR$/selectivesearch/5_visualize_input.py" />
     <entry file="file://$PROJECT_DIR$/5_visualize_input_RoI.py" />
     <entry file="file://$PROJECT_DIR$/DataSets/Grocery/testImages/20170430_110046.jpg" />
     <entry file="file://$PROJECT_DIR$/selectivesearch/6_visualize_output.py" />
     <entry file="file://$PROJECT_DIR$/DataSets/Grocery/test_100.roilabels.txt" />
-    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/test.txt" />
     <entry file="file://$PROJECT_DIR$/DataSets/Grocery/test_100.rois.txt" />
     <entry file="file://$PROJECT_DIR$/5_evaluate_output.py" />
     <entry file="file://$PROJECT_DIR$/proc/Grocery_150/rois/testImages/WIN_20160803_11_28_42_Pro.roi.txt" />
@@ -874,20 +1057,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/rois/negative/1.roi.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110053.roi.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1386">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/rois/negative/1.roi.txt" />
+    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/rois/testImages/20170430_110053.roi.txt" />
     <entry file="file://C:/Program Files/Anaconda3/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -895,34 +1066,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.nrRois.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.rois.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.roilabels.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.nrRois.txt" />
+    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.rois.txt" />
+    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.txt" />
+    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/cntkFiles/train.roilabels.txt" />
     <entry file="file://$PROJECT_DIR$/DataSets/Grocery/positive/20170430_110908.bboxes.labels.tsv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -979,13 +1126,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170417_142318.roi.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/proc/Grocery_150/rois/positive/20170417_142318.roi.txt" />
     <entry file="file://$PROJECT_DIR$/DataSets/Grocery/positive/20170417_142318.bboxes.labels.tsv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1000,59 +1141,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imdb_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fastRCNN/imdb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1_install_fastrcnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4_evaluate_output.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5_evaluate_input.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/6_visualize_output.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,34 +1169,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="20" column="85" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/param.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="116" column="16" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cntk_helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
+        <state relative-caret-position="4642">
           <caret line="222" column="38" lean-forward="false" selection-start-line="222" selection-start-column="38" selection-end-line="222" selection-end-column="38" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Generate label/1-generate-bboxes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="1562">
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_install_fastrcnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -1112,8 +1204,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2_generate_input_RoI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="-1650">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/param.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="130" column="24" lean-forward="false" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="24" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -1122,9 +1224,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/3_run_detection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-660">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="-1381">
+          <caret line="48" column="27" lean-forward="false" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+          <folding>
+            <element signature="e#237#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5_evaluate_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/20170504_201129.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/20170504_201106.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imdb_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="299" column="30" lean-forward="false" selection-start-line="299" selection-start-column="30" selection-end-line="299" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4_evaluate_output.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/6_visualize_output.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
